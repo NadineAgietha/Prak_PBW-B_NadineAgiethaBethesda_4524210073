@@ -5,8 +5,8 @@ LAPORAN PRAKTIKUM <br>
 PEMROGRAMAN BERBASIS WEB
 </h1>
 
-<p style="font-style: italic; font-size: 12px; color: #555;">
-"Laporan ini disusun guna memenuhi penilaian dalam mata kuliah Prak. PBW"
+<p>font-size: 12px; color: #555;">
+<i>"Laporan ini disusun guna memenuhi penilaian dalam mata kuliah Prak. PBW"</i>
 </p>
 
 <br>
