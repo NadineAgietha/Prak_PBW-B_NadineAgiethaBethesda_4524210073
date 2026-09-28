@@ -53,79 +53,114 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 ![Identitas Sebelum](../asset/identitas_sebelum.png)
 
 ## 2. Buat minimal dua modifkasi bermakna pada program
-### 1.) Menambahkan field 'prodi' dan 'semester'. Field ini digunakan untuk menambahkan informasi lengkap mahasiswa, field baru akan otomatis ikut karena proses looping 'foreach' menampilkan semua isi array.
-Code:
+### 1.) Menambahkan Method `infoProduk()` supaya setiap produk punya keterangan sendiri (harga normal atau diskon) karena didefinisikan di intercare jadi wajib menggunakan method ini.
+Code di interface:
 ```php
-$mahasiswa = [
-    'nim'      => '4524210073',
-    'nama'     => 'Nadine Agietha',
-    'prodi'    => 'Teknik Informatika',
-    'semester' => '5',
-    'ipk'      => '3.83',
-];
+interface BisaDihitung
+{
+    public function hargaAkhir(): float;
+    public function infoProduk(): string;
+}
+```
+Code di class 'Produk':
+```php
+public function infoProduk(): string
+{
+    return $this->nama . " (Harga Normal)";
+}
 ```
 
-### 2.) Menambahkan fungsi 'statusKelulusan()' supaya predikat kelulusan muncuk otomatis berdasarkan IPK tanpa harus diketik manual.
+Code di class `ProdukDiskon`:
+```php
+public function infoProduk(): string
+{
+    return $this->nama . " (Diskon {$this->diskon}%)";
+}
+```
+
+### 2.) Constructor `Produk` digunakan untuk mencegah harga bernilai negatif masuk ke object. Jika dilanggar, program melempar `InvalidArgumentException`.
 Code:
 ```php
-function statusKelulusan(float $ipk): string
-{
-    if ($ipk >= 3.50) return 'Sangat memuaskan';
-    if ($ipk >= 3.00) return 'Memuaskan';
-    return 'Perlu Peningkatan';
+public function __construct(
+    protected string $nama,
+    protected float $harga
+) {
+    if ($harga < 0) {
+        throw new InvalidArgumentException("Harga tidak boleh negatif!");
+    }
 }
 ```
 
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
-## 1.) Menggunakan array asosiatif untuk menyimoan array yang indeksnya berupa nama (key), bukan angka. Fungsinya untuk menyimpan data mahasiswa di dalam satu variabel. Data bisa dipanggil lewat nama key, misalnya `$mahasiswa['nim']`.
+## 1.) Interface `BisaDihitung` digunakan untuk memastikan setiap class wajib ounya method 'hargaAkhir()' dan 'infoProduk(); untuk menjaga struktur antar class.
 Code:
 ```php
-$mahasiswa = [
-    'nim'      => '4524210073',
-    'nama'     => 'Nadine Agietha',
-    'prodi'    => 'Teknik Informatika',
-    'semester' => '5',
-    'ipk'      => '3.83',
-];
-```
-
-### 2.) Fungsi `statusKelulusan()` untuk menentukan predikat kelulusan berdasarkan nilai IPK yang dimasukkan.
-Code:
-
-```php
-function statusKelulusan(float $ipk): string
+interface BisaDihitung
 {
-    if ($ipk >= 3.50) return 'Sangat memuaskan';
-    if ($ipk >= 3.00) return 'Memuaskan';
-    return 'Perlu Peningkatan';
+    public function hargaAkhir(): float;
+    public function infoProduk(): string;
 }
 ```
-### 3.) Looping foreach digunakan untuk menampilkan semau data mahasiswa tanpa perlu menulis <li> satu per satu. ucfirst() untuk membuat huruf awal kapital, dan htmlspecialchars() untuk menyimoan karakter unik.
-Code: 
-```php
-<?php foreach ($mahasiswa as $kunci => $nilai): ?>
-    <li><?= ucfirst($kunci) ?>: <?= htmlspecialchars((string)$nilai) ?></li>
-<?php endforeach; ?>
-```
-### 4.) Variabel `$_POST` digunakan untuk mengambil angka dan operator dari form. perator `??` memberi nilai default jika data kosong, `(float)` memastikan tipe data angka.
+
+### 2.) Constructor adalah method yang digunakan untuk otomatis memanggil saat object dibuat. Fungsinya adalah mengisi property `nama` dan `harga` saat object dibuat, sekaligus memvalidasi agar `$harga` tidak bernilai negatif.
 Code:
 ```php
-$a = (float) ($_POST['a'] ?? 0);
-$b = (float) ($_POST['b'] ?? 0);
-$operator = $_POST['operator'] ?? '+';
+public function __construct(
+    protected string $nama,
+    protected float $harga
+) {
+    if ($harga < 0) {
+        throw new InvalidArgumentException("Harga tidak boleh negatif!");
+    }
+}
 ```
 
-### 5.) Menggunakan `$b` digunakan untuk mencegah error dengan mengecek apakah ada nilai 0 sebelum pada pembagian dilakukan.
+### 3.) Inheritance — `ProdukDiskon extends Produk` digunakan untuk mewarisi semua yang dimiliki `Produk`, tapi meng-*override* method `hargaAkhir()` agar menghitung diskon. `parent::__construct()` memanggil constructor induk.
+Code: 
+```php
+class ProdukDiskon extends Produk
+{
+    public function __construct(string $nama, float $harga, private float $diskon)
+    {
+        parent::__construct($nama, $harga);
+    }
+
+    public function hargaAkhir(): float
+    {
+        return $this->harga * (1 - $this->diskon / 100);
+    }
+}
+```
+### 4.) Encapsulation di `identitas.php` sebagai private` yang hanya bisa diakses dari dalam class, `protected` bisa diakses dari class anak. Setter `setIpk()` memvalidasi nilai IPK sebelum disimpan.
 Code:
 ```php
-case '/':
-    if ($b == 0) {
-        $pesan = 'Pembagian dengan nol tidak diperbolehkan.';
-    } else {
-        $hasil = $a / $b;
+class Mahasiswa implements Identitas
+{
+    private string $nim;
+    private string $nama;
+    protected float $ipk;
+
+    public function setIpk(float $ipk): void
+    {
+        if ($ipk < 0 || $ipk > 4) {
+            throw new InvalidArgumentException('IPK harus 0 sampai 4.');
+        }
+        $this->ipk = $ipk;
     }
-    break;
+}
+```
+### 5.) Polymorphism bersifat tergantung perbedaan objectnya, walaupun `$daftar` berisi 2 object berbeda (`Produk` dan `ProdukDiskon`), PHP otomatis memanggil `hargaAkhir()` yang sesuai class masing-masing.
+Code:
+```php
+$daftar = [
+    new Produk('Keyboard', 250000),
+    new ProdukDiskon('Mouse', 150000, 10)
+];
+
+foreach ($daftar as $produk) {
+    echo $produk->getNama() . ' - Rp ' . number_format($produk->hargaAkhir(), 0, ',', '.') . "<br>";
+}
 ```
 
 ## 4. Screenshot sebelum dan sesudah modifkasi
@@ -147,5 +182,5 @@ case '/':
 | Item | Keterangan |
 |------|------------|
 | **Error** | `Uncaught InvalidArgumentException: Harga tidak boleh negatif!` |
-| **Penyebab** | Saat membuat object `new Produk('Produk Rusak', -5000)`, nilai `$harga` bernilai negatif. Validasi di constructor melempar exception, tetapi tidak ada `try-catch` yang menangkapnya. |
+| **Penyebab** | Saat membuat object `new Produk('Produk Rusak', -5000)`, nilai `$harga` bernilai negatif. Validasi di constructor melempar exception, tapi tidak ada `try-catch` untuk menangkap. |
 | **Perbaikan** | Bungkus pembuatan object dalam blok `try { ... } catch (InvalidArgumentException $e) { ... }` agar program tidak crash. |
