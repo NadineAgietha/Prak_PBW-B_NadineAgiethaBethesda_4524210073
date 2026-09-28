@@ -51,8 +51,8 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 ![Biodata Sebelum](../asset/biodata_sebelum.png)
 
 - **`Kalkulator.php`**
-![Kalkulator Sebelum](.../asset/kalkulator_sebelum.png)
-in
+![Kalkulator Sebelum](../asset/kalkulator_sebelum.png)
+
 ## 2. Buat minimal dua modifkasi bermakna pada program
 ### 1.) Menambahkan field 'prodi' dan 'semester'. Field ini digunakan untuk menambahkan informasi lengkap mahasiswa, field baru akan otomatis ikut karena proses looping 'foreach' menampilkan semua isi array.
 Code:
