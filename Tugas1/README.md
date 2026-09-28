@@ -102,7 +102,11 @@ function statusKelulusan(float $ipk): string
     return 'Perlu Peningkatan';
 }
 ```
-
+### 3.) Looping foreach digunakan untuk menampilkan semau data mahasiswa tanpa perlu menulis <li> satu per satu. ucfirst() untuk membuat huruf awal kapital, dan htmlspecialchars() untuk menyimoan karakter unik.
+Code: 
+<?php foreach ($mahasiswa as $kunci => $nilai): ?>
+    <li><?= ucfirst($kunci) ?>: <?= htmlspecialchars((string)$nilai) ?></li>
+<?php endforeach; ?>
 
 ## 4. Screenshot sebelum dan sesudah modifkasi
 
