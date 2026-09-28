@@ -44,4 +44,67 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 
 </div>
 
-## TUGAS 1
+# TUGAS 1
+
+## 1. Jalankan seluruh contoh pertemuan 1 hingga menghasilkan output tanpa error kritis
+- **`Biodata.php`**
+![Biodata Sebelum](asset/biodata_sebelum.png)
+
+- **`Kalkulator.php`**
+![Kalkulator Sebelum](asset/kalkulator_sebelum.png)
+in
+## 2. Buat minimal dua modifkasi bermakna pada program
+### 1.) Menambahkan field 'prodi' dan 'semester'. Field ini digunakan untuk menambahkan informasi lengkap mahasiswa, field baru akan otomatis ikut karena proses looping 'foreach' menampilkan semua isi array.
+Code:
+```php
+$mahasiswa = [
+    'nim'      => '4524210073',
+    'nama'     => 'Nadine Agietha',
+    'prodi'    => 'Teknik Informatika',
+    'semester' => '5',
+    'ipk'      => '3.83',
+];
+```
+
+### 2.) Menambahkan fungsi 'statusKelulusan()' supaya predikat kelulusan muncuk otomatis berdasarkan IPK tanpa harus diketik manual.
+Code:
+```php
+function statusKelulusan(float $ipk): string
+{
+    if ($ipk >= 3.50) return 'Sangat memuaskan';
+    if ($ipk >= 3.00) return 'Memuaskan';
+    return 'Perlu Peningkatan';
+}
+```
+
+
+## 3. Tuliskan penjelasan singkat untuk 5 kode penting
+### 1.) Menggunakan array asosiatif untuk menyimoan array yang indeksnya berupa nama (key), bukan angka. Fungsinya untuk menyimpan data mahasiswa di dalam satu variabel. Data bisa dipanggil lewat nama key, misalnya `$mahasiswa['nim']`.
+Code:
+```php
+$mahasiswa = [
+    'nim'      => '4524210073',
+    'nama'     => 'Nadine Agietha',
+    'prodi'    => 'Teknik Informatika',
+    'semester' => '5',
+    'ipk'      => '3.83',
+];
+```
+
+### 2.) Fungsi `statusKelulusan()` untuk menentukan predikat kelulusan berdasarkan nilai IPK yang dimasukkan.
+Code:
+
+```php
+function statusKelulusan(float $ipk): string
+{
+    if ($ipk >= 3.50) return 'Sangat memuaskan';
+    if ($ipk >= 3.00) return 'Memuaskan';
+    return 'Perlu Peningkatan';
+}
+```
+
+
+## 4. Screenshot sebelum dan sesudah modifkasi
+
+
+## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
