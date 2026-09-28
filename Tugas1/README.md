@@ -11,7 +11,7 @@ PEMROGRAMAN BERBASIS WEB
 
 <br>
 
-<img src="asset/asset/logo-UP.webp" width="400">
+<img src="asset/logo_UP.webp" width="400">
 
 <br><br>
 
@@ -48,10 +48,10 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 <font-size: 12px; color: #555;">
 ## 1. Jalankan seluruh contoh pertemuan 1 hingga menghasilkan output tanpa error kritis
 - **`Biodata.php`**
-![Biodata Sebelum](asset/asset/biodata_sebelum.png)
+![Biodata Sebelum](asset/biodata_sebelum.png)
 
 - **`Kalkulator.php`**
-![Kalkulator Sebelum](asset/asset/kalkulator_sebelum.png)
+![Kalkulator Sebelum](asset/kalkulator_sebelum.png)
 in
 ## 2. Buat minimal dua modifkasi bermakna pada program
 ### 1.) Menambahkan field 'prodi' dan 'semester'. Field ini digunakan untuk menambahkan informasi lengkap mahasiswa, field baru akan otomatis ikut karena proses looping 'foreach' menampilkan semua isi array.
