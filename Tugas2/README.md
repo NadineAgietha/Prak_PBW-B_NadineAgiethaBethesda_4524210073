@@ -44,7 +44,7 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 
 </div>
 
-## TUGAS 1
+## TUGAS 2
 ## 1. Jalankan seluruh contoh pertemuan 1 hingga menghasilkan output tanpa error kritis
 - **`hitung.php`**
 ![Hitung Sebelum](../asset/hitung_sebelum.png)
