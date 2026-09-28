@@ -48,7 +48,7 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 <font-size: 12px; color: #555;">
 ## 1. Jalankan seluruh contoh pertemuan 1 hingga menghasilkan output tanpa error kritis
 - **`Biodata.php`**
-![Biodata Sebelum](https://raw.githubusercontent.com/NadineAgietha/Prak_PBW-B_NadineAgiethaBethesda_4524210073/main/Tugas1/asset/asset/biodata_sebelum.png)
+![Biodata Sebelum] (asset/asset/biodata_sebelum.png)
 
 - **`Kalkulator.php`**
 ![Kalkulator Sebelum](asset/asset/kalkulator_sebelum.png)
