@@ -44,8 +44,7 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 
 </div>
 
-# TUGAS 1
-<font-size: 12px; color: #555;">
+## TUGAS 1
 ## 1. Jalankan seluruh contoh pertemuan 1 hingga menghasilkan output tanpa error kritis
 - **`Biodata.php`**
 ![Biodata Sebelum](../asset/biodata_sebelum.png)
@@ -79,7 +78,7 @@ function statusKelulusan(float $ipk): string
 
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
-### 1.) Menggunakan array asosiatif untuk menyimoan array yang indeksnya berupa nama (key), bukan angka. Fungsinya untuk menyimpan data mahasiswa di dalam satu variabel. Data bisa dipanggil lewat nama key, misalnya `$mahasiswa['nim']`.
+## 1.) Menggunakan array asosiatif untuk menyimoan array yang indeksnya berupa nama (key), bukan angka. Fungsinya untuk menyimpan data mahasiswa di dalam satu variabel. Data bisa dipanggil lewat nama key, misalnya `$mahasiswa['nim']`.
 Code:
 ```php
 $mahasiswa = [
@@ -132,21 +131,21 @@ case '/':
 ## 4. Screenshot sebelum dan sesudah modifkasi
 ## a. biodata.php
 **Sebelum:**
-![Biodata Sebelum](...asset/biodata_sebelum.png)
+![Biodata Sebelum](../asset/biodata_sebelum.png)
 
 **Sesudah:**
-![Biodata Sesudah](...asset/biodata_sesudah.png)
+![Biodata Sesudah](../asset/biodata_sesudah.png)
 
 ## b.kalkulator.php
 **Sebelum:**
-![Kalkulator Sebelum](...asset/kalkulator_sebelum.png)
+![Kalkulator Sebelum](../asset/kalkulator_sebelum.png)
 
 **Sesudah:**
-![Kalkulator Sesudah](...asset/kalkulator_sesudah.png)
+![Kalkulator Sesudah](../asset/kalkulator_sesudah.png)
 
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
 | Item | Keterangan |
 |------|------------|
 | **Error** | `Warning: Undefined variable $hasil` di `Kalkulator.php` |
-| **Penyebab** | Variabel `$hasil` hanya di-set di dalam blok `if ($_SERVER['REQUEST_METHOD'] === 'POST')`. Saat halaman pertama kali dibuka, `$hasil` belum ada. |
+| **Penyebab** | Variabel `$hasil` cuma set di dalam blok `if ($_SERVER['REQUEST_METHOD'] === 'POST')`. Saat halaman pertama kali dibuka, `$hasil` belum ada. |
 | **Perbaikan** | Inisialisasi `$hasil = null;` dan `$pesan = '';` di awal file sebelum blok `if`. |
