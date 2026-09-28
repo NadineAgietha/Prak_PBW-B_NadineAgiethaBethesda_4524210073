@@ -104,11 +104,49 @@ function statusKelulusan(float $ipk): string
 ```
 ### 3.) Looping foreach digunakan untuk menampilkan semau data mahasiswa tanpa perlu menulis <li> satu per satu. ucfirst() untuk membuat huruf awal kapital, dan htmlspecialchars() untuk menyimoan karakter unik.
 Code: 
+```php
 <?php foreach ($mahasiswa as $kunci => $nilai): ?>
     <li><?= ucfirst($kunci) ?>: <?= htmlspecialchars((string)$nilai) ?></li>
 <?php endforeach; ?>
+```
+### 4.) Variabel `$_POST` digunakan untuk mengambil angka dan operator dari form. perator `??` memberi nilai default jika data kosong, `(float)` memastikan tipe data angka.
+Code:
+```php
+$a = (float) ($_POST['a'] ?? 0);
+$b = (float) ($_POST['b'] ?? 0);
+$operator = $_POST['operator'] ?? '+';
+```
+
+### 5.) Menggunakan `$b` digunakan untuk mencegah error dengan mengecek apakah ada nilai 0 sebelum pada pembagian dilakukan.
+Code:
+```php
+case '/':
+    if ($b == 0) {
+        $pesan = 'Pembagian dengan nol tidak diperbolehkan.';
+    } else {
+        $hasil = $a / $b;
+    }
+    break;
+```
 
 ## 4. Screenshot sebelum dan sesudah modifkasi
+## a. biodata.php
+**Sebelum:**
+![Biodata Sebelum](...asset/biodata_sebelum.png)
 
+**Sesudah:**
+![Biodata Sesudah](...asset/biodata_sesudah.png)
+
+## b.kalkulator.php
+**Sebelum:**
+![Kalkulator Sebelum](...asset/kalkulator_sebelum.png)
+
+**Sesudah:**
+![Kalkulator Sesudah](...asset/kalkulator_sesudah.png)
 
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
+| Item | Keterangan |
+|------|------------|
+| **Error** | `Warning: Undefined variable $hasil` di `Kalkulator.php` |
+| **Penyebab** | Variabel `$hasil` hanya di-set di dalam blok `if ($_SERVER['REQUEST_METHOD'] === 'POST')`. Saat halaman pertama kali dibuka, `$hasil` belum ada. |
+| **Perbaikan** | Inisialisasi `$hasil = null;` dan `$pesan = '';` di awal file sebelum blok `if`. |
