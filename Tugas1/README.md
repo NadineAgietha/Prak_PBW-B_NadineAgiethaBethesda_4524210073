@@ -37,17 +37,9 @@ Ari Wibowo, S.Kom., M.Kom., C. Pro
 <br><br><br>
 
 <h3 style="font-size: 16px; margin-bottom: 5px; border: none;">
-S1-TEKNIK INFORMATIKA
+S1-TEKNIK INFORMATIKA <br>
+FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
+<b>2026/2027</b> 
 </h3>
-
-<h3 style="font-size: 16px; margin-top: 5px; border: none;">
-FAKULTAS TEKNIK UNIVERSITAS PANCASILA
-</h3>
-
-<br>
-
-<p style="font-size: 15px;">
-<b>2026/2027</b>
-</p>
 
 </div>
