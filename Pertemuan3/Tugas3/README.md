@@ -134,6 +134,13 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
   <tr>
 
 ### Latihan A 
+<table>
+  <tr>
+    <th>No</th>
+    <th>Query</th>
+    <th>Output</th>
+  </tr>
+  <tr>
     <td>9</td>
     <td>
       <pre><code>CREATE TABLE mahasiswa (
@@ -144,25 +151,15 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
   angkatan YEAR NOT NULL,
   ipk DECIMAL(3,2) DEFAULT 0.00,
   CHECK (ipk BETWEEN 0.00 AND 4.00)
-) ENGINE=InnoDB;</code></pre>
-    </td>
-    <td><img src="image/output9.png" width="400"></td>
-  </tr>
-  <tr>
-    <td>10</td>
-    <td>
-      <pre><code>CREATE TABLE dosen (
+) ENGINE=InnoDB;
+
+CREATE TABLE dosen (
   nidn VARCHAR(20) PRIMARY KEY,
   nama VARCHAR(100) NOT NULL,
   email VARCHAR(120) UNIQUE
-) ENGINE=InnoDB;</code></pre>
-    </td>
-    <td><img src="image/output10.png" width="400"></td>
-  </tr>
-  <tr>
-    <td>11</td>
-    <td>
-      <pre><code>CREATE TABLE mata_kuliah (
+) ENGINE=InnoDB;
+
+CREATE TABLE mata_kuliah (
   kode_mk VARCHAR(12) PRIMARY KEY,
   nama_mk VARCHAR(100) NOT NULL,
   sks TINYINT UNSIGNED NOT NULL,
@@ -172,10 +169,10 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
     ON DELETE SET NULL
 ) ENGINE=InnoDB;</code></pre>
     </td>
-    <td><img src="image/output11.png" width="400"></td>
+    <td><img src="image/output9.png" width="400"></td>
   </tr>
   <tr>
-    <td>12</td>
+    <td>10</td>
     <td>
       <pre><code>CREATE TABLE krs (
   id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
@@ -193,9 +190,9 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
     ON DELETE RESTRICT
 ) ENGINE=InnoDB;</code></pre>
     </td>
-    <td><img src="image/output12.png" width="400"></td>
+    <td><img src="image/output10.png" width="400"></td>
   </tr>
-</table>
+</table>  
 
 ---
 
