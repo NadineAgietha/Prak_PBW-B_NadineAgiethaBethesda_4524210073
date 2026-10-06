@@ -59,7 +59,7 @@ CHARACTER SET utf8mb4
 COLLATE utf8mb4_unicode_ci;
 USE akademik;</code></pre>
     </td>
-    <td><img src="image/output1.png" width="400"></td>
+    <td><img src="image/create_database.png" width="400"></td>
   </tr>
   <tr>
     <td>2</td>
