@@ -132,6 +132,8 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
     <td><img src="image/insertmhs_identitas.png" width="400"></td>
   </tr>
   <tr>
+
+### Latihan A 
     <td>9</td>
     <td>
       <pre><code>CREATE TABLE mahasiswa (
