@@ -42,3 +42,8 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 <b>2026/2027</b> 
 </h3>
 
+# 1. Jalankan seluruh contoh pertemuan 1 hingga menghasilkan output tanpa error kritis
+# 2. Buat minimal dua modifkasi bermakna pada program
+# 3. Tuliskan penjelasan singkat untuk 5 kode penting
+# 4. Screenshot sebelum dan sesudah modifkasi
+## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
