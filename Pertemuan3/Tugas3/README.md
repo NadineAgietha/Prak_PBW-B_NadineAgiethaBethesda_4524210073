@@ -72,7 +72,7 @@ USE akademik;</code></pre>
   ipk DECIMAL(3,2) CHECK (ipk BETWEEN 0.00 AND 4.00)
 );</code></pre>
     </td>
-    <td><img src="image/output2.png" width="400"></td>
+    <td><img src="image/createtable_mhs.png" width="400"></td>
   </tr>
   <tr>
     <td>3</td>
@@ -82,7 +82,7 @@ USE akademik;</code></pre>
   nama_prodi VARCHAR(100)
 );</code></pre>
     </td>
-    <td><img src="image/output3.png" width="400"></td>
+    <td><img src="image/createtable_prodi.png" width="400"></td>
   </tr>
   <tr>
     <td>4</td>
