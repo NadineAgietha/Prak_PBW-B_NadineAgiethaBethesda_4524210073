@@ -133,7 +133,7 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
   </tr>
   <tr>
 
-### Latihan A 
+#### Latihan A 
 <table>
   <tr>
     <th>No</th>
@@ -169,9 +169,10 @@ CREATE TABLE mata_kuliah (
     ON DELETE SET NULL
 ) ENGINE=InnoDB;</code></pre>
     </td>
-    <td><img src="image/output9.png" width="400"></td>
+    <td><img src="image/LatA_Tgs3.png" width="400"></td>
   </tr>
   <tr>
+#### Latihan B
     <td>10</td>
     <td>
       <pre><code>CREATE TABLE krs (
@@ -190,7 +191,7 @@ CREATE TABLE mata_kuliah (
     ON DELETE RESTRICT
 ) ENGINE=InnoDB;</code></pre>
     </td>
-    <td><img src="image/output10.png" width="400"></td>
+    <td><img src="image/LatB_Tgs3.png" width="400"></td>
   </tr>
 </table>  
 
