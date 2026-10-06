@@ -101,7 +101,7 @@ FOREIGN KEY (id_prodi) REFERENCES prodi(id_prodi);</code></pre>
       <pre><code>INSERT INTO mahasiswa (nim, nama, tanggal_lahir, ipk, id_prodi) 
 VALUES ('230001', 'Budi Santoso', '2002-05-15', 4.50, 1);</code></pre>
     </td>
-    <td><img src="image/success_insert.png" width="400"></td>
+    <td><img src="image/failed_insert.png" width="400"></td>
   </tr>
   <tr>
     <td>6</td>
@@ -111,7 +111,7 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 4.50, 1);</code></pre>
 ('Sistem Informasi'), 
 ('Teknik Elektro');</code></pre>
     </td>
-    <td><img src="image/failed_insert.png" width="400"></td>
+    <td><img src="image/insert_prodi.png" width="400"></td>
   </tr>
   <tr>
     <td>7</td>
