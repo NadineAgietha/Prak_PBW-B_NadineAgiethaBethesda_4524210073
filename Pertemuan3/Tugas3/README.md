@@ -93,7 +93,7 @@ ALTER TABLE mahasiswa
 ADD CONSTRAINT fk_mahasiswa_prodi 
 FOREIGN KEY (id_prodi) REFERENCES prodi(id_prodi);</code></pre>
     </td>
-    <td><img src="image/output4.png" width="400"></td>
+    <td><img src="image/altertable_mhs.png" width="400"></td>
   </tr>
   <tr>
     <td>5</td>
@@ -101,7 +101,7 @@ FOREIGN KEY (id_prodi) REFERENCES prodi(id_prodi);</code></pre>
       <pre><code>INSERT INTO mahasiswa (nim, nama, tanggal_lahir, ipk, id_prodi) 
 VALUES ('230001', 'Budi Santoso', '2002-05-15', 4.50, 1);</code></pre>
     </td>
-    <td><img src="image/output5.png" width="400"></td>
+    <td><img src="image/success_insert.png" width="400"></td>
   </tr>
   <tr>
     <td>6</td>
@@ -111,7 +111,7 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 4.50, 1);</code></pre>
 ('Sistem Informasi'), 
 ('Teknik Elektro');</code></pre>
     </td>
-    <td><img src="image/output6.png" width="400"></td>
+    <td><img src="image/failed_insert.png" width="400"></td>
   </tr>
   <tr>
     <td>7</td>
@@ -119,7 +119,7 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 4.50, 1);</code></pre>
       <pre><code>INSERT INTO mahasiswa (nim, nama, tanggal_lahir, ipk, id_prodi) 
 VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
     </td>
-    <td><img src="image/output7.png" width="400"></td>
+    <td><img src="image/success_insert.png" width="400"></td>
   </tr>
   <tr>
     <td>8</td>
@@ -129,7 +129,7 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
 ('23003', 'Rian Hidayat', '2002-12-01', 3.20, 2),
 ('23004', 'Dewi Lestari', '2003-03-10', 3.65, 3);</code></pre>
     </td>
-    <td><img src="image/output8.png" width="400"></td>
+    <td><img src="image/insertmhs_identitas.png" width="400"></td>
   </tr>
   <tr>
     <td>9</td>
