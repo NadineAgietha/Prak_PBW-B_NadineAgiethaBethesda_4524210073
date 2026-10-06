@@ -42,7 +42,7 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 <b>2026/2027</b> 
 </h3>
 
-# 1. Jalankan seluruh contoh pertemuan 1 hingga menghasilkan output tanpa error kritis
+## 1. Jalankan seluruh contoh pertemuan 1 hingga menghasilkan output tanpa error kritis
 ### Tabel Hasil
 
 <table>
