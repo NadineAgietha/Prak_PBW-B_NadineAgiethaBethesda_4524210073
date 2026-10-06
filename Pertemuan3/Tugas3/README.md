@@ -133,7 +133,7 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
   </tr>
   <tr>
 
-#### Latihan A 
+### Latihan A 
 <table>
   <tr>
     <th>No</th>
@@ -172,7 +172,8 @@ CREATE TABLE mata_kuliah (
     <td><img src="image/LatA_Tgs3.png" width="400"></td>
   </tr>
   <tr>
-#### Latihan B
+    
+### Latihan B
     <td>10</td>
     <td>
       <pre><code>CREATE TABLE krs (
