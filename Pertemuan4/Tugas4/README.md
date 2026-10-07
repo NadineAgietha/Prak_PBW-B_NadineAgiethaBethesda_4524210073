@@ -287,6 +287,7 @@ SELECT * FROM mahasiswa ORDER BY ipk DESC LIMIT 2;
     <td><img src="image/modif_setelah.png" width="400"></td>
   </tr>
 </table>
+
 **Penjelasan:**
 - **Sebelum:** rekap hanya per prodi (COUNT + AVG)
 - **Sesudah:** rekap per prodi + angkatan, dengan tambahan MAX, MIN, dan jumlah mahasiswa aktif
