@@ -224,9 +224,17 @@ ADD COLUMN no_hp VARCHAR(15),
 ADD COLUMN status ENUM('Aktif','Cuti','Lulus') DEFAULT 'Aktif',
 ADD CONSTRAINT cek_angkatan CHECK (angkatan BETWEEN 2021 AND 2025);
 
-<table> <tr> <th>Sebelum Modifikasi</th> <th>Sesudah Modifikasi</th> </tr> <tr> <td><img src="image/modif_sebelum.png" width="400"></td>
-
-<td><img src="image/modif_sesudah.png" width="400"></td> </tr> </table>
+<table>
+  <tr>
+    <th>Sebelum Modifikasi</th>
+    <th>Sesudah Modifikasi</th>
+  </tr>
+  <tr>
+    <td><img src="image/sebelum_modif.png" width="400"></td>
+    <td><img src="image/sesudah_modif.png" width="400"></td>
+    <td><img src="image/sesudah_modif2.png" width="400"></td>
+  </tr>
+</table>
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
 
