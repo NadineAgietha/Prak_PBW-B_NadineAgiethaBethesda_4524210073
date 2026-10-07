@@ -216,7 +216,7 @@ CREATE TABLE mata_kuliah (
 
 ---
 
-## 2. Buat minimal dua modifikasi bermakna pada program
+## 2. Buat modifikasi bermakna pada program
 **Query:**
 ```sql
 ALTER TABLE mahasiswa 
@@ -239,14 +239,33 @@ ADD CONSTRAINT cek_angkatan CHECK (angkatan BETWEEN 2021 AND 2025);
 </table>
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
-### 1. CREATE DATABASE
+### 1. CREATE DATABASE untuk penyimpanan semua table
 ```sql
 CREATE DATABASE akademik 
 CHARACTER SET utf8mb4 
 COLLATE utf8mb4_unicode_ci;
 ```
 
----
+### 2. PRIMARY KEY untuk memastikan setiap baris data punya identitas unik dan mencegah duplikasi data mahasiswa
+```sql
+nim VARCHAR(15) PRIMARY KEY
+```
+
+### 3. FOREIGN KEY untuk membangun rekasi antar tabel dan memastikan data di tabel di anak (krs) ke data valid di tabel induk (mahasiswa)
+```sql
+CONSTRAINT fk_krs_mahasiswa 
+FOREIGN KEY (nim) REFERENCES mahasiswa(nim)
+```
+
+### 4. CHECK Constraint untuk memvalidasi data secara otomatis dan mencegah input ipk di luar rentang 0.00-4.00
+```sql
+CHECK (ipk BETWEEN 0.00 AND 4.00)
+```
+
+### 5. ENGINE=InnoDB, untuk mendukung foreign kay dan transaksi bertipe engine. Tanpa InnoDB, relasi antar tabel tidak jalan
+```sql
+) ENGINE=InnoDB;
+```
 
 ## 4. Screenshot sebelum dan sesudah modifikasi
 
