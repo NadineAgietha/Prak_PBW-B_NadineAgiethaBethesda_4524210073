@@ -282,12 +282,6 @@ CHECK (ipk BETWEEN 0.00 AND 4.00)
 ---
 
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
-<table>
-  <tr>
-    <th>Error</th>
-    <th>Penyebab & Perbaikan</th>
-  </tr>
-  <tr>
     <td><img src="image/failed_insert.png" width="400"></td>
     <td>
       <b>Pesan Error:</b><br>
@@ -300,10 +294,7 @@ CHECK (ipk BETWEEN 0.00 AND 4.00)
       <b>Perbaikan:</b><br>
       Ubah nilai ipk menjadi dalam rentang yang valid (0.00–4.00), 
       misalnya 3.75.
-    </td>
-  </tr>
-</table>
-
+      
 **Query yang Gagal:**
 ```sql
 INSERT INTO mahasiswa (nim, nama, tanggal_lahir, ipk, id_prodi) 
