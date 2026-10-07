@@ -104,7 +104,7 @@ FOREIGN KEY (id_prodi) REFERENCES prodi(id_prodi);</code></pre>
     <td>5</td>
     <td>
       <pre><code>INSERT INTO mahasiswa (nim, nama, tanggal_lahir, ipk, id_prodi) 
-VALUES ('24210073', 'Nadine Agietha', '2006-05-03', 4.93, 1);</code></pre>
+VALUES ('24210073', 'Nadine Agietha', '2006-05-03', 4.50, 1);</code></pre>
     </td>
     <td><img src="image/failed_insert.png" width="400"></td>
   </tr>
@@ -122,7 +122,7 @@ VALUES ('24210073', 'Nadine Agietha', '2006-05-03', 4.93, 1);</code></pre>
     <td>7</td>
     <td>
       <pre><code>INSERT INTO mahasiswa (nim, nama, tanggal_lahir, ipk, id_prodi) 
-VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
+VALUES ('24210073', 'Nadine Agietha', '2006-05-03', 3.93, 1);</code></pre>
     </td>
     <td><img src="image/success_insert.png" width="400"></td>
   </tr>
@@ -130,9 +130,9 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
     <td>8</td>
     <td>
       <pre><code>INSERT INTO mahasiswa (nim, nama, tanggal_lahir, ipk, id_prodi) VALUES 
-('23002', 'Siti Aminah', '2003-08-20', 3.90, 1),
-('23003', 'Rian Hidayat', '2002-12-01', 3.20, 2),
-('23004', 'Dewi Lestari', '2003-03-10', 3.65, 3);</code></pre>
+('24210028', 'Dina Camelia', '2003-08-20', 4.00, 1),
+('24210073', 'Nadine Agietha', '2006-05-03', 3.20, 2),
+('24210075', 'Nailah AlyaCalista', '2003-03-10', 3.65, 3);</code></pre>
     </td>
     <td><img src="image/insertmhs_identitas.png" width="400"></td>
   </tr>
