@@ -193,7 +193,7 @@ FROM mahasiswa
 GROUP BY prodi 
 ORDER BY jumlah DESC;</code></pre>
     </td>
-    <td><img src="image/.png" width="400"></td>
+    <td><img src="image/select_rekap.png" width="400"></td>
   </tr>
   <tr>
     <td>11</td>
