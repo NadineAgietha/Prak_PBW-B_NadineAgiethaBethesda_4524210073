@@ -207,13 +207,34 @@ DELETE FROM mahasiswa WHERE nim = '24210075';</code></pre>
 </table>
 
 ## 2. Buat modifikasi bermakna pada program
-**Query:**
+### Query Rekap Gabungan per Prodi & Angkatan
+
+**Query SEBELUM**
+
 ```sql
-ALTER TABLE mahasiswa 
-ADD COLUMN no_hp VARCHAR(15),
-ADD COLUMN status ENUM('Aktif','Cuti','Lulus') DEFAULT 'Aktif',
-ADD CONSTRAINT cek_angkatan CHECK (angkatan BETWEEN 2021 AND 2025);
+SELECT prodi, 
+       COUNT(*) AS jumlah, 
+       ROUND(AVG(ipk),2) AS rata_ipk 
+FROM mahasiswa 
+GROUP BY prodi 
+ORDER BY jumlah DESC;
 ```
+
+**Query SESUDAH (modifikasi):**
+
+```sql
+SELECT prodi, 
+       angkatan,
+       COUNT(*) AS jumlah, 
+       ROUND(AVG(ipk),2) AS rata_ipk,
+       MAX(ipk) AS ipk_tertinggi,
+       MIN(ipk) AS ipk_terendah,
+       SUM(CASE WHEN status = 'Aktif' THEN 1 ELSE 0 END) AS jml_aktif
+FROM mahasiswa 
+GROUP BY prodi, angkatan 
+ORDER BY prodi ASC, angkatan DESC;
+```
+
 **Perbandingan sebelum & sesudah modifikasi:**
 
 <table>
@@ -222,9 +243,8 @@ ADD CONSTRAINT cek_angkatan CHECK (angkatan BETWEEN 2021 AND 2025);
     <th>Sesudah Modifikasi</th>
   </tr>
   <tr>
-    <td><img src="image/sebelum_modif.png" width="400"></td>
-    <td><img src="image/sesudah_modif.png" width="400"> <img src="image/sesudah_modif2.png" width="400"> </td>
-</td>
+    <td><img src="image/select_rekap.png" width="400"></td>
+    <td><img src="image/modif_setelah.png" width="400"></td>
   </tr>
 </table>
 
