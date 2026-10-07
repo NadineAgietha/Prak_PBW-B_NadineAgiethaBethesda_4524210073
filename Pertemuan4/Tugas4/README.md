@@ -149,39 +149,22 @@ VALUES ('24210073', 'Nadine Agietha', '2006-05-03', 3.93, 1);</code></pre>
     <th>Output</th>
   </tr>
   <tr>
-    <td>9</td>
+    <td>8</td>
     <td>
-      <pre><code>CREATE TABLE mahasiswa (
-  nim VARCHAR(15) PRIMARY KEY,
-  nama VARCHAR(100) NOT NULL,
-  email VARCHAR(120) NOT NULL UNIQUE,
-  prodi VARCHAR(80) NOT NULL,
-  angkatan YEAR NOT NULL,
-  ipk DECIMAL(3,2) DEFAULT 0.00,
-  CHECK (ipk BETWEEN 0.00 AND 4.00)
-) ENGINE=InnoDB;
+      <pre><code>INSERT INTO mahasiswa (nim, nama, email, prodi, angkatan, ipk) VALUES 
+('24210028','Dina Camelia','dina@kampus.ac.id','Teknik Informatika',2026,3.95),
+('24210073','Nadine Agietha','nadine@kampus.ac.id','Teknik Informatika',2026,3.92),
+('24210075','Nailah AlyaCalista','nae@kampus.ac.id','Teknik Informatika',2025,3.90);
 
-CREATE TABLE dosen (
-  nidn VARCHAR(20) PRIMARY KEY,
-  nama VARCHAR(100) NOT NULL,
-  email VARCHAR(120) UNIQUE
-) ENGINE=InnoDB;
-
-CREATE TABLE mata_kuliah (
-  kode_mk VARCHAR(12) PRIMARY KEY,
-  nama_mk VARCHAR(100) NOT NULL,
-  sks TINYINT UNSIGNED NOT NULL,
-  nidn VARCHAR(20),
-  CONSTRAINT fk_mk_dosen FOREIGN KEY (nidn) REFERENCES dosen(nidn)
-    ON UPDATE CASCADE
-    ON DELETE SET NULL
-) ENGINE=InnoDB;</code></pre>
+SELECT nim, nama, prodi, ipk 
+FROM mahasiswa 
+WHERE ipk >= 3.50 
+ORDER BY ipk DESC, nama ASC 
+LIMIT 10;</code></pre>
     </td>
-    <td><img src="image/LatA_Tgs3.png" width="400"></td>
+    <td><img src="image/LatA_Tgs4.png" width="400"></td>
   </tr>
 </table>
-
----
 
 ### Latihan B
 
@@ -192,29 +175,36 @@ CREATE TABLE mata_kuliah (
     <th>Output</th>
   </tr>
   <tr>
+    <td>9</td>
+    <td>
+      <pre><code>UPDATE mahasiswa 
+SET ipk = 3.40 
+WHERE nim = '2025003';</code></pre>
+    </td>
+    <td><img src="image/latB_ubah.png" width="400"></td>
+  </tr>
+  <tr>
     <td>10</td>
     <td>
-      <pre><code>CREATE TABLE krs (
-  id BIGINT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  nim VARCHAR(15) NOT NULL,
-  kode_mk VARCHAR(12) NOT NULL,
-  semester TINYINT UNSIGNED NOT NULL,
-  tahun_ajaran VARCHAR(9) NOT NULL,
-  nilai_huruf CHAR(2) NULL,
-  CONSTRAINT uq_krs UNIQUE (nim, kode_mk, semester, tahun_ajaran),
-  CONSTRAINT fk_krs_mahasiswa FOREIGN KEY (nim) REFERENCES mahasiswa(nim)
-    ON UPDATE CASCADE
-    ON DELETE CASCADE,
-  CONSTRAINT fk_krs_mk FOREIGN KEY (kode_mk) REFERENCES mata_kuliah(kode_mk)
-    ON UPDATE CASCADE
-    ON DELETE RESTRICT
-) ENGINE=InnoDB;</code></pre>
+      <pre><code>SELECT prodi, 
+       COUNT(*) AS jumlah, 
+       ROUND(AVG(ipk),2) AS rata_ipk 
+FROM mahasiswa 
+GROUP BY prodi 
+ORDER BY jumlah DESC;</code></pre>
     </td>
-    <td><img src="image/LatB_Tgs3.png" width="400"></td>
+    <td><img src="image/latB_rekap.png" width="400"></td>
+  </tr>
+  <tr>
+    <td>11</td>
+    <td>
+      <pre><code>SELECT * FROM mahasiswa WHERE nim = '2025003';
+
+DELETE FROM mahasiswa WHERE nim = '2025003';</code></pre>
+    </td>
+    <td><img src="image/latB_verif.png" width="400"></td>
   </tr>
 </table>
-
----
 
 ## 2. Buat modifikasi bermakna pada program
 **Query:**
