@@ -133,7 +133,8 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
   </tr>
   <tr>
 
-### Latihan A 
+### Latihan A
+
 <table>
   <tr>
     <th>No</th>
@@ -171,9 +172,18 @@ CREATE TABLE mata_kuliah (
     </td>
     <td><img src="image/LatA_Tgs3.png" width="400"></td>
   </tr>
-  <tr>
-    
+</table>
+
+---
 ### Latihan B
+
+<table>
+  <tr>
+    <th>No</th>
+    <th>Query</th>
+    <th>Output</th>
+  </tr>
+  <tr>
     <td>10</td>
     <td>
       <pre><code>CREATE TABLE krs (
@@ -194,9 +204,7 @@ CREATE TABLE mata_kuliah (
     </td>
     <td><img src="image/LatB_Tgs3.png" width="400"></td>
   </tr>
-</table>  
-
----
+</table>
 
 # 2. Buat minimal dua modifkasi bermakna pada program
 # 3. Tuliskan penjelasan singkat untuk 5 kode penting
