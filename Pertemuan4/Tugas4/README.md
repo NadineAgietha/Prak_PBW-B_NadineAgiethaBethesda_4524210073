@@ -249,47 +249,48 @@ ORDER BY prodi ASC, angkatan DESC;
 </table>
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
-### 1. CREATE DATABASE untuk penyimpanan semua table
+### 1. SELECT untuk mengambil data dari tabel tanpa harus mengubah isinya dan dasar untuk semua query bisa baca data
 ```sql
-CREATE DATABASE akademik 
-CHARACTER SET utf8mb4 
-COLLATE utf8mb4_unicode_ci;
+SELECT nim, nama, ipk FROM mahasiswa;
 ```
 
-### 2. PRIMARY KEY untuk memastikan setiap baris data punya identitas unik dan mencegah duplikasi data mahasiswa
+### 2. WHERE untuk memfilter data sesuai kondisi
 ```sql
-nim VARCHAR(15) PRIMARY KEY
+SELECT * FROM mahasiswa WHERE ipk >= 3.50;
 ```
 
-### 3. FOREIGN KEY untuk membangun rekasi antar tabel dan memastikan data di tabel di anak (krs) ke data valid di tabel induk (mahasiswa)
+### 3. ORDER BY untuk mengurutkan hasil query. ASC = kecil ke besar, DESC = besar ke kecil.
 ```sql
-CONSTRAINT fk_krs_mahasiswa 
-FOREIGN KEY (nim) REFERENCES mahasiswa(nim)
+SELECT * FROM mahasiswa ORDER BY ipk DESC;
 ```
 
-### 4. CHECK Constraint untuk memvalidasi data secara otomatis dan mencegah input ipk di luar rentang 0.00-4.00
+### 4. GROUP BY untuk mengelompokkan data agregasi (COUNT, AVG, MAX, MIN, SUM).
 ```sql
-CHECK (ipk BETWEEN 0.00 AND 4.00)
+SELECT prodi, COUNT(*) AS jumlah 
+FROM mahasiswa 
+GROUP BY prodi;
 ```
 
-### 5. ENGINE=InnoDB, untuk mendukung foreign kay dan transaksi bertipe engine. Tanpa InnoDB, relasi antar tabel tidak jalan
+### 5. LIMIT untuk mmebatasi jumlah baris hasil query.
 ```sql
-) ENGINE=InnoDB;
+SELECT * FROM mahasiswa ORDER BY ipk DESC LIMIT 2;
 ```
 
 ## 4. Screenshot sebelum dan sesudah modifikasi
 <table>
   <tr>
-    <th>Sebelum Modifikasi</th>
-    <th>Sesudah Modifikasi</th>
+    <th>Sebelum</th>
+    <th>Sesudah</th>
   </tr>
   <tr>
-    <td><img src="image/sebelum_modif.png" width="400"></td>
-    <td><img src="image/sesudah_modif.png" width="400"> <img src="image/sesudah_modif2.png" width="400"> </td>
-</td>
+    <td><img src="image/select_rekap.png" width="400"></td>
+    <td><img src="image/modif_setelah.png" width="400"></td>
   </tr>
 </table>
----
+**Penjelasan:**
+- **Sebelum:** rekap hanya per prodi (COUNT + AVG)
+- **Sesudah:** rekap per prodi + angkatan, dengan tambahan MAX, MIN, dan jumlah mahasiswa aktif
+
 
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
 ### Error: Gagal check constraiint— ipk di Luar Rentang
