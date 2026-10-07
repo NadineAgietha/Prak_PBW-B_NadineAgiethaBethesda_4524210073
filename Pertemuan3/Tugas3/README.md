@@ -233,8 +233,8 @@ ADD CONSTRAINT cek_angkatan CHECK (angkatan BETWEEN 2021 AND 2025);
   </tr>
   <tr>
     <td><img src="image/sebelum_modif.png" width="400"></td>
-    <td><img src="image/sesudah_modif.png" width="400"></td>
-    <td><img src="image/sesudah_modif2.png" width="400"></td>
+    <td><img src="image/sesudah_modif.png" width="400"> <img src="image/sesudah_modif2.png" width="400"> </td>
+</td>
   </tr>
 </table>
 
