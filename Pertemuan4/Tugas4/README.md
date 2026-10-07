@@ -181,7 +181,7 @@ LIMIT 10;</code></pre>
 SET ipk = 3.40 
 WHERE nim = '2025003';</code></pre>
     </td>
-    <td><img src="image/latB_ubah.png" width="400"></td>
+    <td><img src="image/update_ipk.png" width="400"></td>
   </tr>
   <tr>
     <td>10</td>
@@ -193,7 +193,7 @@ FROM mahasiswa
 GROUP BY prodi 
 ORDER BY jumlah DESC;</code></pre>
     </td>
-    <td><img src="image/latB_rekap.png" width="400"></td>
+    <td><img src="image/LatB_selectfrom.png" width="400"></td>
   </tr>
   <tr>
     <td>11</td>
