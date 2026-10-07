@@ -42,7 +42,12 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 <b>2026/2027</b> 
 </h3>
 
-## 1. Jalankan seluruh contoh pertemuan 1 hingga menghasilkan output tanpa error kritis
+</div>
+
+---
+
+## 1. Jalankan seluruh contoh pertemuan 3 hingga 4 menghasilkan output tanpa error kritis
+
 ### Tabel Hasil
 
 <table>
@@ -131,7 +136,9 @@ VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);</code></pre>
     </td>
     <td><img src="image/insertmhs_identitas.png" width="400"></td>
   </tr>
-  <tr>
+</table>
+
+---
 
 ### Latihan A
 
@@ -175,6 +182,7 @@ CREATE TABLE mata_kuliah (
 </table>
 
 ---
+
 ### Latihan B
 
 <table>
@@ -206,7 +214,26 @@ CREATE TABLE mata_kuliah (
   </tr>
 </table>
 
-# 2. Buat minimal dua modifkasi bermakna pada program
-# 3. Tuliskan penjelasan singkat untuk 5 kode penting
-# 4. Screenshot sebelum dan sesudah modifkasi
+---
+
+## 2. Buat minimal dua modifikasi bermakna pada program
+
+<!-- ISI DI SINI -->
+
+---
+
+## 3. Tuliskan penjelasan singkat untuk 5 kode penting
+
+<!-- ISI DI SINI -->
+
+---
+
+## 4. Screenshot sebelum dan sesudah modifikasi
+
+<!-- ISI DI SINI -->
+
+---
+
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
+
+<!-- ISI DI SINI -->
