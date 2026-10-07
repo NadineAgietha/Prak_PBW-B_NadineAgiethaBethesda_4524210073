@@ -193,7 +193,7 @@ FROM mahasiswa
 GROUP BY prodi 
 ORDER BY jumlah DESC;</code></pre>
     </td>
-    <td><img src="image/LatB_selectfrom.png" width="400"></td>
+    <td><img src="image/.png" width="400"></td>
   </tr>
   <tr>
     <td>11</td>
@@ -202,7 +202,7 @@ ORDER BY jumlah DESC;</code></pre>
 
 DELETE FROM mahasiswa WHERE nim = '2025003';</code></pre>
     </td>
-    <td><img src="image/latB_verif.png" width="400"></td>
+    <td><img src="image/LatB_selectfrom.png" width="400"></td>
   </tr>
 </table>
 
