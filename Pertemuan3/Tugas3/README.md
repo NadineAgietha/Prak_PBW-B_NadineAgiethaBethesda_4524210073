@@ -268,11 +268,50 @@ CHECK (ipk BETWEEN 0.00 AND 4.00)
 ```
 
 ## 4. Screenshot sebelum dan sesudah modifikasi
-
-<!-- ISI DI SINI -->
-
+<table>
+  <tr>
+    <th>Sebelum Modifikasi</th>
+    <th>Sesudah Modifikasi</th>
+  </tr>
+  <tr>
+    <td><img src="image/sebelum_modif.png" width="400"></td>
+    <td><img src="image/sesudah_modif.png" width="400"> <img src="image/sesudah_modif2.png" width="400"> </td>
+</td>
+  </tr>
+</table>
 ---
 
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
+<table>
+  <tr>
+    <th>Error</th>
+    <th>Penyebab & Perbaikan</th>
+  </tr>
+  <tr>
+    <td><img src="image/failed_insert.png" width="400"></td>
+    <td>
+      <b>Pesan Error:</b><br>
+      #3819 - Check constraint 'mahasiswa_chk_1' is violated.<br><br>
+      
+      <b>Penyebab:</b><br>
+      INSERT ke tabel mahasiswa dengan nilai ipk = 4.50, padahal 
+      CHECK constraint mensyaratkan ipk harus antara 0.00 sampai 4.00.<br><br>
+      
+      <b>Perbaikan:</b><br>
+      Ubah nilai ipk menjadi dalam rentang yang valid (0.00–4.00), 
+      misalnya 3.75.
+    </td>
+  </tr>
+</table>
 
-<!-- ISI DI SINI -->
+**Query yang Gagal:**
+```sql
+INSERT INTO mahasiswa (nim, nama, tanggal_lahir, ipk, id_prodi) 
+VALUES ('230001', 'Budi Santoso', '2002-05-15', 4.50, 1);
+```
+
+**Query Perbaikan:**
+```sql
+INSERT INTO mahasiswa (nim, nama, tanggal_lahir, ipk, id_prodi) 
+VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);
+```
