@@ -282,11 +282,6 @@ CHECK (ipk BETWEEN 0.00 AND 4.00)
 ---
 
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
-    <td><img src="image/failed_insert.png" width="400"></td>
-    <td>
-      <b>Pesan Error:</b><br>
-      #3819 - Check constraint 'mahasiswa_chk_1' is violated.<br><br>
-      
       <b>Penyebab:</b><br>
       INSERT ke tabel mahasiswa dengan nilai ipk = 4.50, padahal 
       CHECK constraint mensyaratkan ipk harus antara 0.00 sampai 4.00.<br><br>
@@ -294,6 +289,8 @@ CHECK (ipk BETWEEN 0.00 AND 4.00)
       <b>Perbaikan:</b><br>
       Ubah nilai ipk menjadi dalam rentang yang valid (0.00–4.00), 
       misalnya 3.75.
+
+       <td><img src="image/failed_insert.png" width="400"></td>
       
 **Query yang Gagal:**
 ```sql
