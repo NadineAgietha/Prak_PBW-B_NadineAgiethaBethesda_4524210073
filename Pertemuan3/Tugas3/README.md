@@ -224,6 +224,8 @@ ADD COLUMN no_hp VARCHAR(15),
 ADD COLUMN status ENUM('Aktif','Cuti','Lulus') DEFAULT 'Aktif',
 ADD CONSTRAINT cek_angkatan CHECK (angkatan BETWEEN 2021 AND 2025);
 
+**Perbandingan sebelum & sesudah modifikasi:**
+
 <table>
   <tr>
     <th>Sebelum Modifikasi</th>
