@@ -198,11 +198,11 @@ ORDER BY jumlah DESC;</code></pre>
   <tr>
     <td>11</td>
     <td>
-      <pre><code>SELECT * FROM mahasiswa WHERE nim = '2025003';
+      <pre><code>SELECT * FROM mahasiswa WHERE nim = '24210075';
 
-DELETE FROM mahasiswa WHERE nim = '2025003';</code></pre>
+DELETE FROM mahasiswa WHERE nim = '24210075';</code></pre>
     </td>
-    <td><img src="image/LatB_selectfrom.png" width="400"></td>
+    <td><img src="image/deletemhs_id7.png" width="400"></td>
   </tr>
 </table>
 
