@@ -130,8 +130,8 @@ VALUES ('24210073', 'Nadine Agietha', '2006-05-03', 3.93, 1);</code></pre>
     <td>8</td>
     <td>
       <pre><code>INSERT INTO mahasiswa (nim, nama, tanggal_lahir, ipk, id_prodi) VALUES 
-('24210028', 'Dina Camelia', '2003-08-20', 4.00, 1),
-('24210073', 'Nadine Agietha', '2006-05-03', 3.20, 2),
+('24210028', 'Dina Camelia', '2003-08-20', 3.20, 1),
+('24210073', 'Nadine Agietha', '2006-05-03', 3.97, 2),
 ('24210075', 'Nailah AlyaCalista', '2003-03-10', 3.65, 3);</code></pre>
     </td>
     <td><img src="image/insertmhs_identitas.png" width="400"></td>
@@ -217,10 +217,16 @@ CREATE TABLE mata_kuliah (
 ---
 
 ## 2. Buat minimal dua modifikasi bermakna pada program
+**Query:**
+```sql
+ALTER TABLE mahasiswa 
+ADD COLUMN no_hp VARCHAR(15),
+ADD COLUMN status ENUM('Aktif','Cuti','Lulus') DEFAULT 'Aktif',
+ADD CONSTRAINT cek_angkatan CHECK (angkatan BETWEEN 2021 AND 2025);
 
-<!-- ISI DI SINI -->
+<table> <tr> <th>Sebelum Modifikasi</th> <th>Sesudah Modifikasi</th> </tr> <tr> <td><img src="image/modif_sebelum.png" width="400"></td>
 
----
+<td><img src="image/modif_sesudah.png" width="400"></td> </tr> </table>
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
 
