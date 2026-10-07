@@ -239,8 +239,12 @@ ADD CONSTRAINT cek_angkatan CHECK (angkatan BETWEEN 2021 AND 2025);
 </table>
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
-
-<!-- ISI DI SINI -->
+### 1. CREATE DATABASE
+```sql
+CREATE DATABASE akademik 
+CHARACTER SET utf8mb4 
+COLLATE utf8mb4_unicode_ci;
+```
 
 ---
 
