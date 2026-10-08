@@ -179,7 +179,7 @@ LIMIT 10;</code></pre>
     <td>
       <pre><code>UPDATE mahasiswa 
 SET ipk = 3.40 
-WHERE nim = '2025003';</code></pre>
+WHERE nim = '24210073';</code></pre>
     </td>
     <td><img src="image/update_ipk.png" width="400"></td>
   </tr>
@@ -294,7 +294,7 @@ SELECT * FROM mahasiswa ORDER BY ipk DESC LIMIT 2;
 
 
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
-### Error: Gagal check constraiint— ipk di Luar Rentang
+### Error: Gagal check constraint— ipk di Luar Rentang
 
 **Screenshot Error:**
 ![Error CHECK Constraint](image/failed_insert.png)
