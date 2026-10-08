@@ -113,7 +113,7 @@ VALUES ('24210073', 'Nadine Agietha', '2006-05-03', 4.50, 1);</code></pre>
     <td>
       <pre><code>INSERT INTO prodi (nama_prodi) VALUES 
 ('Teknik Informatika'), 
-('Sistem Informasi'), 
+('Teknik Arsitektur'), 
 ('Teknik Elektro');</code></pre>
     </td>
     <td><img src="image/insert_prodi.png" width="400"></td>
