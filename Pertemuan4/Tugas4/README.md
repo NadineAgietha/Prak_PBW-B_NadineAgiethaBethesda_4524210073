@@ -294,27 +294,41 @@ SELECT * FROM mahasiswa ORDER BY ipk DESC LIMIT 2;
 
 
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
-### Error: Gagal check constraint— ipk di Luar Rentang
+### Error unknown column untuk query rekap 
 
 **Screenshot Error:**
-![Error CHECK Constraint](image/failed_insert.png)
+![Error CHECK Constraint](image/error_p4.png)
 
 **Pesan Error:**
 ```
-#3819 - Check constraint 'mahasiswa_chk_1' is violated.
+#1054 - Unknown column 'prodi' in 'field list'
 ```
 
 **Penyebab:**
-INSERT ke tabel mahasiswa dengan nilai ipk = 4.50, padahal CHECK constraint mensyaratkan ipk harus antara 0.00 sampai 4.00.
+Query rekap modifikasi memakai kolom prodi, angkatan, dan status yang tidak ada di tabel mahasiswa. Tabel mahasiswa hanya memiliki id_prodi sebagai foreign key yang merujuk ke tabel prodi.
 
 **Query yang Gagal:**
 ```sql
-INSERT INTO mahasiswa (nim, nama, tanggal_lahir, ipk, id_prodi) 
-VALUES ('230001', 'Budi Santoso', '2002-05-15', 4.50, 1);
+SELECT prodi, 
+       angkatan,
+       COUNT(*) AS jumlah, 
+       ROUND(AVG(ipk),2) AS rata_ipk,
+       MAX(ipk) AS ipk_tertinggi,
+       MIN(ipk) AS ipk_terendah,
+       SUM(CASE WHEN status = 'Aktif' THEN 1 ELSE 0 END) AS jml_aktif
+FROM mahasiswa 
+GROUP BY prodi, angkatan;
 ```
 
 **Query Perbaikan:**
 ```sql
-INSERT INTO mahasiswa (nim, nama, tanggal_lahir, ipk, id_prodi) 
-VALUES ('230001', 'Budi Santoso', '2002-05-15', 3.75, 1);
+SELECT p.nama_prodi AS prodi,
+       COUNT(*) AS jumlah,
+       ROUND(AVG(m.ipk),2) AS rata_ipk,
+       MAX(m.ipk) AS ipk_tertinggi,
+       MIN(m.ipk) AS ipk_terendah
+FROM mahasiswa m
+JOIN prodi p ON m.id_prodi = p.id_prodi
+GROUP BY p.nama_prodi
+ORDER BY jumlah DESC;
 ```
