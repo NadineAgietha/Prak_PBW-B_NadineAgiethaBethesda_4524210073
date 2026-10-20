@@ -53,6 +53,27 @@ Memastikan file 'koneksi.php' bisa terhubung dengan server MySQL dan database 'a
 <tr>
     <td><img src="image/success_koneksi.png" width="400"></td>
   </tr>
+
+### B. setup.php untuk membuat tabel otomatis
+<tr>
+    <td><img src="image/success_setup.png" width="400"></td>
+  </tr>
+
+### C. Tampilan form.php untuk mengisi input pada browser
+<tr>
+    <td><img src="formphp.png" width="400"></td>
+  </tr>
+  
+### Mengisi data.php di form input
+<tr>
+    <td><img src="inputdata.png" width="400"></td>
+  </tr>
+
+### simpan.php untuk menampilkan output
+<tr>
+    <td><img src="inputdata.png" width="400"></td>
+  </tr>
+  
 ## 2. Buat modifikasi bermakna pada program
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
