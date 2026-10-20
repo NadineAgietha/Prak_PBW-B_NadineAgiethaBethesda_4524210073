@@ -50,8 +50,8 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: center;">
   <tr>
     <td align="center">
-      <img src="image/kode_koneksi_t.png" width="400"><br>
-      <i>(Gambar 1.1: koneksi.php)</i>
+      <img src="image/koneksi_p6.png" width="400"><br>
+      <i>koneksi.php</i>
     </td>
     <td align="center">
       <img src="image/kode_create.png" width="400"><br>
