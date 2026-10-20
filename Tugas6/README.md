@@ -174,7 +174,7 @@ while ($data = mysqli_fetch_assoc($query)) {
       <i>(Gambar 4.7: update.php - Kode asli tanpa validasi)</i>
     </td>
     <td align="center">
-      <img src="image/creator_error_validasi.png" width="400"><br>
+      <img src="image/create_error_validasi.png" width="400"><br>
       <i>(Gambar 4.8: updatemodif.php - Berhasil mengubah data)</i>
     </td>
   </tr>
