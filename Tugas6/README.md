@@ -54,41 +54,42 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
       <i>koneksi.php</i>
     </td>
     <td align="center">
-      <img src="image/create_sebelum.png" width="400"><br>
-      <i>create.php</i>
+      <img src="image/store_sebelum.png" width="400"><br>
+      <i>store.php</i>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="image/store_sebelum.png" width="400"><br>
-      <i>store.php</i>
-    </td>
-    <td align="center">
       <img src="image/index_sebelum.png" width="400"><br>
       <i>index.php</i>
     </td>
+    <td align="center">
+      <img src="image/berhasil_edit.png" width="400"><br>
+      <i>update.php</i>
+    </td>
   </tr>
-   <tr>
+  <tr>
+    <td align="center">
+      <img src="image/create_sebelum.png" width="400"><br>
+      <i>create.php</i>
+    </td>
     <td align="center">
       <img src="image/edit_sebelum.png" width="400"><br>
       <i>edit.php</i>
-    </td>
-    <td align="center">
-      <img src="image/berhasil_edit.png" width="400"><br>
-      <i>(Gambar 1.6: update.php)</i>
     </td>
   </tr>
   <tr>
     <td align="center">
       <img src="image/delete_sebelum.png" width="400"><br>
-      <i>(Gambar 1.7: delete.php)</i>
+      <i>delete.php</i>
     </td>
     <td align="center">
       <img src="image/simpan_sebelum.png" width="400"><br>
-      <i>(Gambar 1.8: simpan.php)</i>
+      <i>simpan.php</i>
     </td>
   </tr>
 </table>
+
 ## 2. Buat minimal dua modifkasi bermakna pada program
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
 ## 4. Screenshot sebelum dan sesudah modifkasi
