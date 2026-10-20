@@ -224,26 +224,26 @@ $koneksi = mysqli_connect($host, $user, $password, $dbname);
 
 ### 2. mysqli_real_escape_string untuk mencegah SQL Injection
 Fungsi ini wajib untuk menjaga keamanan saat menerima inputan dari user. Karakter khusus (misal tanda kutip) akan dianggap sebagai teks biasa, sehingga tidak disalahgunakan untuk manipulasi struktur query database.
-```sql
+```php
 $nim = mysqli_real_escape_string($koneksi, trim($_POST['nim']));
 ```
 
 ### 3. INSERT INTO untuk menambahkan data baru
 Digunakan untuk memasukkan data mahasiswa yang diiput dari form ke tabel database.
-```sql
+```php
 INSERT INTO mahasiswa (nim, nama, email, prodi, angkatan, ipk) 
 VALUES ('$nim', '$nama', '$email', '$prodi', '$angkatan', '$ipk');
 ```
 
 ### 4. UPDATE untuk mengubah data yang sudah ada
 Digunakan pada file.php untuk memperbarui data mahasiswa berdasarkan NIM (primary key) yang dipilih.
-```sql
+```php
 UPDATE mahasiswa SET nama='$nama', ipk='$ipk' WHERE nim='$nim';
 ```
 
 ### 5. while dan mysqli_fetch_assoc untuk menampilkan data ke tabel HTML
 Looping untuk membaca setiap baru is hasil query dari database, lalu akan dicetak ke dalam tabel HTML secara berulang sampai data habis.
-```sql
+```php
 while ($data = mysqli_fetch_assoc($query)) {
     echo "<tr><td>" . $data['nim'] . "</td></tr>";
 }
