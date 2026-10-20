@@ -81,14 +81,67 @@ Memastikan file 'koneksi.php' bisa terhubung dengan server MySQL dan database 'a
   <tr>
     <td>
       <img src="image/databerhasil_disimpan.png" width="400"><br>
+        <i>Data berhasil disimpan</i>
     </td>
     <td>
-      <img src="image/simpanmodif2.png" width="400"><br>
+      <img src="image/gagal_simpan.png" width="400"><br>
+        <i>Data gagal disimpan</i>
     </td>
   </tr>
 </table>
 
+**Kode Program (simpanmodif.php):**
+```php
+<?php
+include "koneksi.php";
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // 1. Ambil & bersihkan data
+    $nim      = mysqli_real_escape_string($koneksi, trim($_POST['nim']));
+    $nama     = mysqli_real_escape_string($koneksi, trim($_POST['nama']));
+    $email    = mysqli_real_escape_string($koneksi, trim($_POST['email']));
+    $prodi    = mysqli_real_escape_string($koneksi, trim($_POST['prodi']));
+    $angkatan = (int) $_POST['angkatan'];
+    $ipk      = (float) $_POST['ipk'];
+
+
+
+    if (empty($nim) || empty($nama) || empty($email) || empty($prodi)) {
+        echo "<script>alert('Gagal: Semua field wajib diisi!'); window.history.back();</script>";
+        exit;
+    }
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<script>alert('Gagal: Format email tidak valid!'); window.history.back();</script>";
+        exit;
+    }
+    if ($ipk < 0 || $ipk > 4) {
+        echo "<script>alert('Gagal: IPK harus di antara 0.00 - 4.00!'); window.history.back();</script>";
+        exit;
+    }
+
+    // 2. Cek NIM / Email duplikat
+    $cek = mysqli_query($koneksi, "SELECT nim, email FROM mahasiswa WHERE nim='$nim' OR email='$email'");
+    if (mysqli_num_rows($cek) > 0) {
+        echo "<script>alert('Gagal: NIM atau Email sudah terdaftar!'); window.history.back();</script>";
+        exit;
+    }
+
+    // 3. Simpan
+    $query = mysqli_query($koneksi,
+        "INSERT INTO mahasiswa (nim, nama, email, prodi, angkatan, ipk)
+         VALUES ('$nim', '$nama', '$email', '$prodi', $angkatan, $ipk)");
+
+    if ($query) {
+        echo "<script>
+                alert('Data berhasil disimpan!');
+                window.location.href = 'datamodif.php';
+              </script>";
+    } else {
+        echo "Data gagal disimpan: " . mysqli_error($koneksi);
+    }
+}
+?>
+```
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
 ### 1. SELECT untuk mengambil data dari tabel tanpa harus mengubah isinya dan dasar untuk semua query bisa baca data
