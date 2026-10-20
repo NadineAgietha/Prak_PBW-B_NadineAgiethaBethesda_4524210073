@@ -53,7 +53,7 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 ![Kalkulator Sebelum](../asset/kalkulator_sebelum.png)
 
 ## 2. Buat minimal dua modifkasi bermakna pada program
-### 1.) Menambahkan field 'prodi' dan 'semester'. Field ini digunakan untuk menambahkan informasi lengkap mahasiswa, field baru akan otomatis ikut karena proses looping 'foreach' menampilkan semua isi array.
+1.) Menambahkan field 'prodi' dan 'semester'. Field ini digunakan untuk menambahkan informasi lengkap mahasiswa, field baru akan otomatis ikut karena proses looping 'foreach' menampilkan semua isi array.
 Code:
 ```php
 $mahasiswa = [
@@ -65,7 +65,7 @@ $mahasiswa = [
 ];
 ```
 
-### 2.) Menambahkan fungsi 'statusKelulusan()' supaya predikat kelulusan muncuk otomatis berdasarkan IPK tanpa harus diketik manual.
+2.) Menambahkan fungsi 'statusKelulusan()' supaya predikat kelulusan muncuk otomatis berdasarkan IPK tanpa harus diketik manual.
 Code:
 ```php
 function statusKelulusan(float $ipk): string
@@ -78,7 +78,7 @@ function statusKelulusan(float $ipk): string
 
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
-## 1.) Menggunakan array asosiatif untuk menyimoan array yang indeksnya berupa nama (key), bukan angka. Fungsinya untuk menyimpan data mahasiswa di dalam satu variabel. Data bisa dipanggil lewat nama key, misalnya `$mahasiswa['nim']`.
+1.) Menggunakan array asosiatif untuk menyimoan array yang indeksnya berupa nama (key), bukan angka. Fungsinya untuk menyimpan data mahasiswa di dalam satu variabel. Data bisa dipanggil lewat nama key, misalnya `$mahasiswa['nim']`.
 Code:
 ```php
 $mahasiswa = [
@@ -90,7 +90,7 @@ $mahasiswa = [
 ];
 ```
 
-### 2.) Fungsi `statusKelulusan()` untuk menentukan predikat kelulusan berdasarkan nilai IPK yang dimasukkan.
+2.) Fungsi `statusKelulusan()` untuk menentukan predikat kelulusan berdasarkan nilai IPK yang dimasukkan.
 Code:
 
 ```php
@@ -101,14 +101,14 @@ function statusKelulusan(float $ipk): string
     return 'Perlu Peningkatan';
 }
 ```
-### 3.) Looping foreach digunakan untuk menampilkan semau data mahasiswa tanpa perlu menulis <li> satu per satu. ucfirst() untuk membuat huruf awal kapital, dan htmlspecialchars() untuk menyimoan karakter unik.
+3.) Looping foreach digunakan untuk menampilkan semau data mahasiswa tanpa perlu menulis <li> satu per satu. ucfirst() untuk membuat huruf awal kapital, dan htmlspecialchars() untuk menyimoan karakter unik.
 Code: 
 ```php
 <?php foreach ($mahasiswa as $kunci => $nilai): ?>
     <li><?= ucfirst($kunci) ?>: <?= htmlspecialchars((string)$nilai) ?></li>
 <?php endforeach; ?>
 ```
-### 4.) Variabel `$_POST` digunakan untuk mengambil angka dan operator dari form. perator `??` memberi nilai default jika data kosong, `(float)` memastikan tipe data angka.
+4.) Variabel `$_POST` digunakan untuk mengambil angka dan operator dari form. perator `??` memberi nilai default jika data kosong, `(float)` memastikan tipe data angka.
 Code:
 ```php
 $a = (float) ($_POST['a'] ?? 0);
@@ -116,7 +116,7 @@ $b = (float) ($_POST['b'] ?? 0);
 $operator = $_POST['operator'] ?? '+';
 ```
 
-### 5.) Menggunakan `$b` digunakan untuk mencegah error dengan mengecek apakah ada nilai 0 sebelum pada pembagian dilakukan.
+5.) Menggunakan `$b` digunakan untuk mencegah error dengan mengecek apakah ada nilai 0 sebelum pada pembagian dilakukan.
 Code:
 ```php
 case '/':
