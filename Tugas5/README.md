@@ -64,12 +64,12 @@ Memastikan file 'koneksi.php' bisa terhubung dengan server MySQL dan database 'a
     <td><img src="image/formphp.png" width="400"></td>
   </tr>
   
-### Mengisi data.php di form input
+### D. Mengisi data.php di form input
 <tr>
     <td><img src="image/inputdata.png" width="400"></td>
   </tr>
 
-### D. simpan.php untuk menampilkan output
+### E. simpan.php untuk menampilkan output
 <tr>
     <td><img src="image/berhasilsimpan.png" width="400"></td>
   </tr>
