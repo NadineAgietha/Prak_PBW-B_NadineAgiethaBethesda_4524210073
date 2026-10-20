@@ -145,5 +145,83 @@ while ($data = mysqli_fetch_assoc($query)) {
 }
 ```
 ## 4. Screenshot sebelum dan sesudah modifkasi
+<table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: center;">
+  <tr>
+    <td align="center">
+      <img src="image/store_sebelum.png" width="400"><br>
+      <i>(Gambar 4.3: store.php - Kode asli tanpa escape & validasi)</i>
+    </td>
+    <td align="center">
+      <img src="image/store_sesudah.png" width="400"><br>
+      <i>(Gambar 4.4: storemodif.php - Alert validasi IPK/NIM duplikat)</i>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <img src="image/index_sebelum.png" width="400"><br>
+      <i>(Gambar 4.5: index.php - Tabel polos tanpa pencarian)</i>
+    </td>
+    <td align="center">
+      <img src="image/index_sesudah.png" width="400"><br>
+      <i>(Gambar 4.6: indexmodif.php - Ada Tailwind & fitur cari)</i>
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="center">
+      <img src="image/update_sebelum.png" width="400"><br>
+      <i>(Gambar 4.7: update.php - Kode asli tanpa validasi)</i>
+    </td>
+    <td align="center">
+      <img src="image/berhasil_edit.png" width="400"><br>
+      <i>(Gambar 4.8: updatemodif.php - Berhasil mengubah data)</i>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <img src="image/create_sebelum.png" width="400"><br>
+      <i>(Gambar 4.9: create.php - Form polos tanpa min/max)</i>
+    </td>
+    <td align="center">
+      <img src="image/create_sesudah.png" width="400"><br>
+      <i>(Gambar 4.10: createmodif.php - Ada batasan min/max IPK)</i>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <img src="image/edit_sebelum.png" width="400"><br>
+      <i>(Gambar 4.11: edit.php - NIM masih bisa diedit)</i>
+    </td>
+    <td align="center">
+      <img src="image/edit_sesudah.png" width="400"><br>
+      <i>(Gambar 4.12: editmodif.php - NIM dikunci readonly)</i>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <img src="image/delete_sebelum.png" width="400"><br>
+      <i>(Gambar 4.13: delete.php - Kode asli tanpa pengecekan)</i>
+    </td>
+    <td align="center">
+      <img src="image/delete_sesudah.png" width="400"><br>
+      <i>(Gambar 4.14: deletemodif.php - Ada pengecekan isset())</i>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <img src="image/simpan_sebelum.png" width="400"><br>
+      <i>(Gambar 4.15: simpan.php - Hanya teks biasa tanpa alert)</i>
+    </td>
+    <td align="center">
+      <img src="image/simpan_sesudah.png" width="400"><br>
+      <i>(Gambar 4.16: simpan.php - Tampilan alert sukses)</i>
+    </td>
+  </tr>
+</table>
 
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
