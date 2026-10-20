@@ -114,7 +114,6 @@ Menambahkan pengecekan `isset($_GET['nim'])` agar tidak terjadi *error* jika URL
 ### 1.`mysqli_connect` untuk menghubungkan PHP dengan database MySQL**
 Bagian penting dari aplikasi agar bisa terhubung dengan database, tanpa ada koneksi ini semua operasi data tidak akan berjalan
 ```php
-```php
 $koneksi = mysqli_connect($host, $user, $password, $dbname);
 ```
 
@@ -175,7 +174,7 @@ while ($data = mysqli_fetch_assoc($query)) {
     </td>
     <td align="center">
       <img src="image/create_error_validasi.png" width="400"><br>
-      <i>(Gambar 4.8: updatemodif.php - Berhasil mengubah data)</i>
+      <i>(Gambar 4.8: updatemodif.php - Alert error)</i>
     </td>
   </tr>
 
@@ -200,26 +199,30 @@ while ($data = mysqli_fetch_assoc($query)) {
       <i>(Gambar 4.12: editmodif.php - NIM dikunci readonly)</i>
     </td>
   </tr>
-
+  
   <tr>
-    <td align="center">
-      <img src="image/delete_sebelum.png" width="400"><br>
-      <i>(Gambar 4.13: delete.php - Kode asli tanpa pengecekan)</i>
+    <td align="left" style="background-color: #f9f9f9;">
+      <b>delete.php</b><br>
+      <pre style="text-align: left; font-size: 12px;"><code>
+$nim = $_GET['nim'];
+$query = mysqli_query(
+    $koneksi,
+    "DELETE FROM mahasiswa WHERE nim='$nim'"
+);
+      </code></pre>
     </td>
-    <td align="center">
-      <img src="image/delete_sesudah.png" width="400"><br>
-      <i>(Gambar 4.14: deletemodif.php - Ada pengecekan isset())</i>
-    </td>
-  </tr>
-
-  <tr>
-    <td align="center">
-      <img src="image/simpan_sebelum.png" width="400"><br>
-      <i>(Gambar 4.15: simpan.php - Hanya teks biasa tanpa alert)</i>
-    </td>
-    <td align="center">
-      <img src="image/simpan_sesudah.png" width="400"><br>
-      <i>(Gambar 4.16: simpan.php - Tampilan alert sukses)</i>
+    <td align="left" style="background-color: #f9f9f9;">
+      <b>deletemodif.php</b><br>
+      <pre style="text-align: left; font-size: 12px;"><code>
+if (isset($_GET['nim']) && !empty($_GET['nim'])) {
+    $nim = mysqli_real_escape_string($koneksi, $_GET['nim']);
+    $query = mysqli_query($koneksi, "DELETE FROM mahasiswa WHERE nim='$nim'");
+    // proses alert & redirect
+} else {
+    header("Location: indexmodif.php");
+    exit;
+}
+      </code></pre>
     </td>
   </tr>
 </table>
