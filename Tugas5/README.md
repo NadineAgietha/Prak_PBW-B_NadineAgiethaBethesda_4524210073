@@ -74,6 +74,12 @@ Memastikan file 'koneksi.php' bisa terhubung dengan server MySQL dan database 'a
     <td><img src="image/berhasilsimpan.png" width="400"></td>
   </tr>
 
+### F. Data.php menampilkan data yang sudah di input
+<tr>
+    <td><img src="image/datasblm_modif.png" width="400"></td>
+  </tr>
+
+
 
 ## 2. Buat modifikasi bermakna pada program
 ### A. Modifikasi keamanan dan validasi data (simpanmodif.php) 
