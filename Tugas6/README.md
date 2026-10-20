@@ -54,24 +54,24 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
       <i>koneksi.php</i>
     </td>
     <td align="center">
-      <img src="image/kode_create.png" width="400"><br>
-      <i>(Gambar 1.2: create.php)</i>
+      <img src="image/create_sebelum.png" width="400"><br>
+      <i>create.php</i>
     </td>
   </tr>
   <tr>
     <td align="center">
-      <img src="image/kode_store.png" width="400"><br>
-      <i>(Gambar 1.3: store.php)</i>
+      <img src="image/store_sebelum.png" width="400"><br>
+      <i>store.php</i>
     </td>
     <td align="center">
-      <img src="image/kode_index.png" width="400"><br>
-      <i>(Gambar 1.4: index.php)</i>
+      <img src="image/index_sebelum.png" width="400"><br>
+      <i>index.php</i>
     </td>
   </tr>
    <tr>
     <td align="center">
-      <img src="image/kode_edit.png" width="400"><br>
-      <i>(Gambar 1.5: edit.php)</i>
+      <img src="image/edit_sebelum.png" width="400"><br>
+      <i>edit.php</i>
     </td>
     <td align="center">
       <img src="image/kode_update.png" width="400"><br>
@@ -80,7 +80,7 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
   </tr>
   <tr>
     <td align="center">
-      <img src="image/kode_delete.png" width="400"><br>
+      <img src="image/delete_sebelum.png" width="400"><br>
       <i>(Gambar 1.7: delete.php)</i>
     </td>
     <td align="center">
