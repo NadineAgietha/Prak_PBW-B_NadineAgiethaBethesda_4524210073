@@ -88,6 +88,16 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
       <i>simpan.php</i>
     </td>
   </tr>
+  <tr>
+    <td align="center">
+      <img src="image/form_tgs6.png" width="400"><br>
+      <i>form.php</i>
+    </td>
+    <td align="center">
+      <img src="image/data_tgs6.png" width="400"><br>
+      <i>data.php</i>
+    </td>
+  </tr>
 </table>
 
 ## 2. Buat minimal dua modifkasi bermakna pada program
@@ -148,55 +158,55 @@ while ($data = mysqli_fetch_assoc($query)) {
   <tr>
     <td align="center">
       <img src="image/store_sebelum.png" width="400"><br>
-      <i>(Gambar 4.3: store.php - Kode asli tanpa escape & validasi)</i>
+      <i>(Gambar 4.1: store.php - Kode asli tanpa escape & validasi)</i>
     </td>
     <td align="center">
       <img src="image/store_sesudah.png" width="400"><br>
-      <i>(Gambar 4.4: storemodif.php - Alert validasi IPK/NIM duplikat)</i>
+      <i>(Gambar 4.2: storemodif.php - Alert validasi IPK/NIM duplikat)</i>
     </td>
   </tr>
 
   <tr>
     <td align="center">
       <img src="image/index_sebelum.png" width="400"><br>
-      <i>(Gambar 4.5: index.php - Tabel polos tanpa pencarian)</i>
+      <i>(Gambar 4.3: index.php - Tabel polos tanpa pencarian)</i>
     </td>
     <td align="center">
       <img src="image/index_sesudah.png" width="400"><br>
-      <i>(Gambar 4.6: indexmodif.php - Ada Tailwind & fitur cari)</i>
+      <i>(Gambar 4.4: indexmodif.php - Ada Tailwind & fitur cari)</i>
     </td>
   </tr>
   
   <tr>
     <td align="center">
       <img src="image/berhasil_edit.png" width="400"><br>
-      <i>(Gambar 4.7: update.php - Kode asli tanpa validasi)</i>
+      <i>(Gambar 4.5: update.php - Kode asli tanpa validasi)</i>
     </td>
     <td align="center">
       <img src="image/create_error_validasi.png" width="400"><br>
-      <i>(Gambar 4.8: updatemodif.php - Alert error)</i>
+      <i>(Gambar 4.6: updatemodif.php - Alert error)</i>
     </td>
   </tr>
 
   <tr>
     <td align="center">
       <img src="image/create_sebelum.png" width="300"><br>
-      <i>(Gambar 4.9: create.php - Form polos tanpa min/max)</i>
+      <i>(Gambar 4.7: create.php - Form polos tanpa min/max)</i>
     </td>
     <td align="center">
       <img src="image/create_sesudah.png" width="300"><br>
-      <i>(Gambar 4.10: createmodif.php - Ada batasan min/max IPK)</i>
+      <i>(Gambar 4.8: createmodif.php - Ada batasan min/max IPK)</i>
     </td>
   </tr>
 
   <tr>
     <td align="center">
       <img src="image/edit_sebelum.png" width="300"><br>
-      <i>(Gambar 4.11: edit.php - NIM masih bisa diedit)</i>
+      <i>(Gambar 4.9: edit.php - NIM masih bisa diedit)</i>
     </td>
     <td align="center">
       <img src="image/edit_sesudah.png" width="300"><br>
-      <i>(Gambar 4.12: editmodif.php - NIM dikunci readonly)</i>
+      <i>(Gambar 4.10: editmodif.php - NIM dikunci readonly)</i>
     </td>
   </tr>
   
@@ -228,3 +238,7 @@ if (isset($_GET['nim']) && !empty($_GET['nim'])) {
 </table>
 
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
+**Error "Not Found" Saat Submit Form**
+*   **Error:** Browser menampilkan halaman `Not Found` dengan tulisan *The requested URL was not found on this server* saat tombol Simpan diklik.
+*   **Penyebab:** Atribut `action` pada form di `createmodif.php` mengarah ke file yang tidak ada (misalnya karena ekstensi `.php` belum ditambahkan, atau browser menyimpan *cache* kode form versi lama yang masih mengarah ke `store.php`).
+*   **Langkah Perbaikan:** Memastikan nama file di direktori sudah benar (`storemodif.php` dengan ekstensi `.php`), lalu melakukan *Hard Refresh* (`Ctrl + F5`) pada browser agar halaman form memuat kode `action="storemodif.php"` yang terbaru.
