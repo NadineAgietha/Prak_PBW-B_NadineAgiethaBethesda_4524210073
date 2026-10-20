@@ -74,8 +74,21 @@ Memastikan file 'koneksi.php' bisa terhubung dengan server MySQL dan database 'a
     <td><img src="image/berhasilsimpan.png" width="400"></td>
   </tr>
 
-### simpan
+
 ## 2. Buat modifikasi bermakna pada program
+### A. Menambahkan fungsi `mysqli_real_escape_string()` dan `trim()` untuk membersihkan input. Menambahkan validasi untuk IPK (0.00 - 4.00) dan format Email dan menghindari error database dengan mengecek apakah NIM atau email sudah pernah terdaftar. 
+<table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: center;">
+  <tr>
+    <td>
+      <img src="image/simpanmodif1.png" width="400"><br>
+    </td>
+    <td>
+      <img src="image/simpanmodif2.png" width="400"><br>
+    </td>
+  </tr>
+</table>
+
+
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
 ### 1. SELECT untuk mengambil data dari tabel tanpa harus mengubah isinya dan dasar untuk semua query bisa baca data
