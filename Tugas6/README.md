@@ -111,5 +111,39 @@ Menambahkan pengecekan `isset($_GET['nim'])` agar tidak terjadi *error* jika URL
     *   Menggunakan `htmlspecialchars()` pada setiap *output* data di tabel untuk mencegah eksekusi 
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
+### 1.`mysqli_connect` untuk menghubungkan PHP dengan database MySQL**
+Bagian penting dari aplikasi agar bisa terhubung dengan database, tanpa ada koneksi ini semua operasi data tidak akan berjalan
+```php
+```php
+$koneksi = mysqli_connect($host, $user, $password, $dbname);
+```
+
+### 2. mysqli_real_escape_string untuk mencegah SQL Injection
+Fungsi ini wajib untuk menjaga keamanan saat menerima inputan dari user. Karakter khusus (misal tanda kutip) akan dianggap sebagai teks biasa, sehingga tidak disalahgunakan untuk manipulasi struktur query database.
+```php
+$nim = mysqli_real_escape_string($koneksi, trim($_POST['nim']));
+```
+
+### 3. INSERT INTO untuk menambahkan data baru
+Digunakan di dalam store.php untuk memasukkan data mahasiswa yang diiput dari form ke tabel database.
+```php
+INSERT INTO mahasiswa (nim, nama, email, prodi, angkatan, ipk) 
+VALUES ('$nim', '$nama', '$email', '$prodi', '$angkatan', '$ipk');
+```
+
+### 4. UPDATE untuk mengubah data yang sudah ada
+Digunakan pada update.php untuk memperbarui data mahasiswa berdasarkan NIM (primary key) yang dipilih.
+```php
+UPDATE mahasiswa SET nama='$nama', ipk='$ipk' WHERE nim='$nim';
+```
+
+### 5. while dan mysqli_fetch_assoc untuk menampilkan data ke tabel HTML
+Looping untuk membaca setiap baru is hasil query dari database, lalu akan dicetak ke dalam tabel HTML secara berulang sampai data habis.
+```php
+while ($data = mysqli_fetch_assoc($query)) {
+    // output ke tabel HTML
+}
+```
 ## 4. Screenshot sebelum dan sesudah modifkasi
+
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
