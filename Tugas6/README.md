@@ -47,6 +47,48 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 ---
 
 ## 1. Jalankan seluruh contoh pertemuan 6 hingga menghasilkan output tanpa error kritis
+<table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: center;">
+  <tr>
+    <td align="center">
+      <img src="image/kode_koneksi_t.png" width="400"><br>
+      <i>(Gambar 1.1: koneksi.php)</i>
+    </td>
+    <td align="center">
+      <img src="image/kode_create.png" width="400"><br>
+      <i>(Gambar 1.2: create.php)</i>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="image/kode_store.png" width="400"><br>
+      <i>(Gambar 1.3: store.php)</i>
+    </td>
+    <td align="center">
+      <img src="image/kode_index.png" width="400"><br>
+      <i>(Gambar 1.4: index.php)</i>
+    </td>
+  </tr>
+   <tr>
+    <td align="center">
+      <img src="image/kode_edit.png" width="400"><br>
+      <i>(Gambar 1.5: edit.php)</i>
+    </td>
+    <td align="center">
+      <img src="image/kode_update.png" width="400"><br>
+      <i>(Gambar 1.6: update.php)</i>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="image/kode_delete.png" width="400"><br>
+      <i>(Gambar 1.7: delete.php)</i>
+    </td>
+    <td align="center">
+      <img src="image/kode_simpan.png" width="400"><br>
+      <i>(Gambar 1.8: simpan.php)</i>
+    </td>
+  </tr>
+</table>
 ## 2. Buat minimal dua modifkasi bermakna pada program
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
 ## 4. Screenshot sebelum dan sesudah modifkasi
