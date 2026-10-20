@@ -70,11 +70,11 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
   </tr>
   <tr>
     <td align="center">
-      <img src="image/create_sebelum.png" width="400"><br>
+      <img src="image/create_sebelum.png" width="300"><br>
       <i>create.php</i>
     </td>
     <td align="center">
-      <img src="image/edit_sebelum.png" width="400"><br>
+      <img src="image/edit_sebelum.png" width="300"><br>
       <i>edit.php</i>
     </td>
   </tr>
@@ -180,22 +180,22 @@ while ($data = mysqli_fetch_assoc($query)) {
 
   <tr>
     <td align="center">
-      <img src="image/create_sebelum.png" width="400"><br>
+      <img src="image/create_sebelum.png" width="300"><br>
       <i>(Gambar 4.9: create.php - Form polos tanpa min/max)</i>
     </td>
     <td align="center">
-      <img src="image/create_sesudah.png" width="400"><br>
+      <img src="image/create_sesudah.png" width="300"><br>
       <i>(Gambar 4.10: createmodif.php - Ada batasan min/max IPK)</i>
     </td>
   </tr>
 
   <tr>
     <td align="center">
-      <img src="image/edit_sebelum.png" width="400"><br>
+      <img src="image/edit_sebelum.png" width="300"><br>
       <i>(Gambar 4.11: edit.php - NIM masih bisa diedit)</i>
     </td>
     <td align="center">
-      <img src="image/edit_sesudah.png" width="400"><br>
+      <img src="image/edit_sesudah.png" width="300"><br>
       <i>(Gambar 4.12: editmodif.php - NIM dikunci readonly)</i>
     </td>
   </tr>
