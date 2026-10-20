@@ -46,7 +46,7 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 
 ---
 
-## 1. Jalankan seluruh contoh pertemuan 1 hingga menghasilkan output tanpa error kritis
+## 1. Jalankan seluruh contoh pertemuan 6 hingga menghasilkan output tanpa error kritis
 ## 2. Buat minimal dua modifkasi bermakna pada program
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
 ## 4. Screenshot sebelum dan sesudah modifkasi
