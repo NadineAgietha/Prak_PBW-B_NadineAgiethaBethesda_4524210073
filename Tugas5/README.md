@@ -210,31 +210,37 @@ $query = mysqli_query($koneksi, $sql);
 ```
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
-### 1. SELECT untuk mengambil data dari tabel tanpa harus mengubah isinya dan dasar untuk semua query bisa baca data
+### 1.`mysqli_connect` untuk menghubungkan PHP dengan database MySQL**
+Bagian penting dari aplikasi agar bisa terhubung dengan database, tanpa ada koneksi ini semua operasi data tidak akan berjalan
 ```sql
-SELECT nim, nama, ipk FROM mahasiswa;
+$koneksi = mysqli_connect($host, $user, $password, $dbname);
 ```
 
-### 2. WHERE untuk memfilter data sesuai kondisi
+### 2. mysqli_real_escape_string untuk mencegah SQL Injection
+Fungsi ini wajib untuk menjaga keamanan saat menerima inputan dari user. Karakter khusus (misal tanda kutip) akan dianggap sebagai teks biasa, sehingga tidak disalahgunakan untuk manipulasi struktur query database.
 ```sql
-SELECT * FROM mahasiswa WHERE ipk >= 3.50;
+$nim = mysqli_real_escape_string($koneksi, trim($_POST['nim']));
 ```
 
-### 3. ORDER BY untuk mengurutkan hasil query. ASC = kecil ke besar, DESC = besar ke kecil.
+### 3. INSERT INTO untuk menambahkan data baru
+Digunakan untuk memasukkan data mahasiswa yang diiput dari form ke tabel database.
 ```sql
-SELECT * FROM mahasiswa ORDER BY ipk DESC;
+INSERT INTO mahasiswa (nim, nama, email, prodi, angkatan, ipk) 
+VALUES ('$nim', '$nama', '$email', '$prodi', '$angkatan', '$ipk');
 ```
 
-### 4. GROUP BY untuk mengelompokkan data agregasi (COUNT, AVG, MAX, MIN, SUM).
+### 4. UPDATE untuk mengubah data yang sudah ada
+Digunakan pada file.php untuk memperbarui data mahasiswa berdasarkan NIM (primary key) yang dipilih.
 ```sql
-SELECT prodi, COUNT(*) AS jumlah 
-FROM mahasiswa 
-GROUP BY prodi;
+UPDATE mahasiswa SET nama='$nama', ipk='$ipk' WHERE nim='$nim';
 ```
 
-### 5. LIMIT untuk mmebatasi jumlah baris hasil query.
+### 5. while dan mysqli_fetch_assoc untuk menampilkan data ke tabel HTML
+Looping untuk membaca setiap baru is hasil query dari database, lalu akan dicetak ke dalam tabel HTML secara berulang sampai data habis.
 ```sql
-SELECT * FROM mahasiswa ORDER BY ipk DESC LIMIT 2;
+while ($data = mysqli_fetch_assoc($query)) {
+    echo "<tr><td>" . $data['nim'] . "</td></tr>";
+}
 ```
 
 ## 4. Screenshot sebelum dan sesudah modifikasi
