@@ -74,7 +74,7 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
       <i>edit.php</i>
     </td>
     <td align="center">
-      <img src="image/kode_update.png" width="400"><br>
+      <img src="image/berhasil_edit.png" width="400"><br>
       <i>(Gambar 1.6: update.php)</i>
     </td>
   </tr>
@@ -84,7 +84,7 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
       <i>(Gambar 1.7: delete.php)</i>
     </td>
     <td align="center">
-      <img src="image/kode_simpan.png" width="400"><br>
+      <img src="image/simpan_sebelum.png" width="400"><br>
       <i>(Gambar 1.8: simpan.php)</i>
     </td>
   </tr>
