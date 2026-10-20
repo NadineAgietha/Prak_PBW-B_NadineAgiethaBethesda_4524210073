@@ -91,22 +91,22 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 </table>
 
 ## 2. Buat minimal dua modifkasi bermakna pada program
-1.)  **`createmodif.php`**
+1.)  **`createmodif.php`** <br>
     Menambahkan atribut HTML5 `min="0.00"` dan `max="4.00"` pada input IPK, serta `min="2000"` `max="2100"` pada Angkatan untuk validasi sisi *client*.
   
-2.) **`storemodif.php`**
+2.) **`storemodif.php`** <br>
     Menambahkan `mysqli_real_escape_string`, validasi IPK, dan pengecekan duplikasi NIM/Email. Jika gagal, memunculkan *alert*.
   
-3.) **`updatemodif.php`**
+3.) **`updatemodif.php`** <br>
     Sama seperti store, menambahkan pembersihan input, validasi IPK, dan pengecekan agar email yang diubah tidak menabrak email milik mahasiswa lain.
   
-4.) **`editmodif.php`**
+4.) **`editmodif.php`** <br>
     Membuat input NIM menjadi `readonly` (tidak bisa diedit) agar integritas *Primary Key* terjaga, serta menambahkan `htmlspecialchars()` pada form.
  
-5.) **`deletemodif.php`**
+5.) **`deletemodif.php`** <br>
       Menambahkan pengecekan `isset($_GET['nim'])` agar tidak terjadi *error* jika URL diakses tanpa parameter, dan menggunakan `mysqli_real_escape_string`.
 
-6.) **`indexmodif.php`** 
+6.) **`indexmodif.php`** <br>
     *   Menambahkan **Form Pencarian** (berdasarkan NIM atau Nama) di atas tabel data.
     *   Menggunakan `htmlspecialchars()` pada setiap *output* data di tabel untuk mencegah eksekusi 
 
