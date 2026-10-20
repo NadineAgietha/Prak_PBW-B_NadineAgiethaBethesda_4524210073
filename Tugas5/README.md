@@ -80,7 +80,7 @@ Memastikan file 'koneksi.php' bisa terhubung dengan server MySQL dan database 'a
 <table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: center;">
   <tr>
     <td>
-      <img src="image/simpanmodif1.png" width="400"><br>
+      <img src="image/databerhasil_disimpan.png" width="400"><br>
     </td>
     <td>
       <img src="image/simpanmodif2.png" width="400"><br>
