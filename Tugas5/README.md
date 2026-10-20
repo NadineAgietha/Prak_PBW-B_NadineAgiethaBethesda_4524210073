@@ -46,7 +46,7 @@ FAKULTAS TEKNIK UNIVERSITAS PANCASILA <br>
 
 ---
 
-## 1. Jalankan seluruh contoh pertemuan 3 hingga 4 menghasilkan output tanpa error kritis
+## 1. Jalankan seluruh contoh pertemuan 5 menghasilkan output tanpa error kritis
 
 ### A. Uji koneksi database
 Memastikan file 'koneksi.php' bisa terhubung dengan server MySQL dan database 'akademik'.
