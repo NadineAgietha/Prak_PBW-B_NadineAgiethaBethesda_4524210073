@@ -150,9 +150,64 @@ Data ditampilkan dalam bentuk Tabel HTML dan di styling menggunakan CSS, uga men
   <tr>
     <td>
       <img src="image/datamodif.png" width="400"><br>
+        <i>Tampilan data tabel mahasiswa</i>
     </td>
+    <td>
+      <img src="image/pencarian_data.png" width="400"><br>
+      <i>Fitur pencarian data berdasarkan NIM/Nama</i>
   </tr>
 </table>
+
+**Kode Program (datamodif.php):**
+```php
+<?php
+include "koneksi.php";
+
+// Fitur pencarian
+$cari = isset($_GET['cari']) ? mysqli_real_escape_string($koneksi, $_GET['cari']) : '';
+$sql  = "SELECT * FROM mahasiswa";
+if ($cari != '') {
+    $sql .= " WHERE nim LIKE '%$cari%' OR nama LIKE '%$cari%'";
+}
+$query = mysqli_query($koneksi, $sql);
+?>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Mahasiswa</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 30px; background: #f4f6f8; }
+        table { border-collapse: collapse; width: 100%; background: #fff; }
+        th, td { padding: 10px 14px; border-bottom: 1px solid #ddd; text-align: left; }
+        th { background: #3498db; color: #fff; }
+    </style>
+</head>
+<body>
+    <h2>Data Mahasiswa</h2>
+    <form method="get">
+        <input type="text" name="cari" placeholder="Cari NIM / Nama..." value="<?= htmlspecialchars($cari) ?>">
+        <button type="submit">Cari</button>
+    </form>
+    <br>
+    <table>
+        <tr>
+            <th>No</th><th>NIM</th><th>Nama</th><th>Email</th><th>Prodi</th><th>Angkatan</th><th>IPK</th>
+        </tr>
+        <?php $no = 1; while ($data = mysqli_fetch_assoc($query)): ?>
+        <tr>
+            <td><?= $no++ ?></td>
+            <td><?= htmlspecialchars($data['nim']) ?></td>
+            <td><?= htmlspecialchars($data['nama']) ?></td>
+            <td><?= htmlspecialchars($data['email']) ?></td>
+            <td><?= htmlspecialchars($data['prodi']) ?></td>
+            <td><?= htmlspecialchars($data['angkatan']) ?></td>
+            <td><?= htmlspecialchars($data['ipk']) ?></td>
+        </tr>
+        <?php endwhile; ?>
+    </table>
+</body>
+</html>
+```
 
 ## 3. Tuliskan penjelasan singkat untuk 5 kode penting
 ### 1. SELECT untuk mengambil data dari tabel tanpa harus mengubah isinya dan dasar untuk semua query bisa baca data
