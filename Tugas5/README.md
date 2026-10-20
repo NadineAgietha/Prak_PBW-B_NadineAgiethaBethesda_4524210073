@@ -250,59 +250,45 @@ while ($data = mysqli_fetch_assoc($query)) {
 ```
 
 ## 4. Screenshot sebelum dan sesudah modifikasi
-<table>
+**4.1. Modifikasi File `simpanmodif.php` (Validasi & Keamanan)**
+<table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: center;">
   <tr>
-    <th>Sebelum</th>
-    <th>Sesudah</th>
+    <th>Sebelum Modifikasi</th>
+    <th>Sesudah Modifikasi</th>
   </tr>
   <tr>
-    <td><img src="image/select_rekap.png" width="400"></td>
-    <td><img src="image/modif_setelah.png" width="400"></td>
+    <td>
+      <img src="image/berhasilsimpan.png" width="400"><br>
+      <i>Tanpa pembersihan input & tanpa cek duplikat</i>
+    </td>
+    <td>
+      <img src="image/gagal_simpan.png" width="400"><br>
+      <i>Ada validasi IPK, cek duplikat NIM, dan anti-SQL Injection</i>
+    </td>
   </tr>
 </table>
 
-**Penjelasan:**
-- **Sebelum:** rekap hanya per prodi (COUNT + AVG)
-- **Sesudah:** rekap per prodi + angkatan, dengan tambahan MAX, MIN, dan jumlah mahasiswa aktif
+**4.2. Modifikasi File `datamodif.php` (Tampilan & Fitur)**
+<table border="1" cellpadding="10" cellspacing="0" style="width: 100%; text-align: center;">
+  <tr>
+    <th>Sebelum Modifikasi</th>
+    <th>Sesudah Modifikasi</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="image/datasblm_modif.png" width="400"><br>
+      <i>Data ditampilkan berderet ke bawah, tanpa tabel & pencarian</i>
+    </td>
+    <td>
+      <img src="image/datamodif.png" width="400"><br>
+      <i>Berbentuk tabel, ada fitur pencarian, dan rapi</i>
+    </td>
+  </tr>
+</table>
 
 
 ## 5. Tuliskan satu error yang pernah muncul, penyebab, dan langkah perbaikan
-### Error unknown column untuk query rekap 
-
-**Screenshot Error:**
-![Error CHECK Constraint](image/error_p4.png)
-
-**Pesan Error:**
-```
-#1054 - Unknown column 'prodi' in 'field list'
-```
-
-**Penyebab:**
-Query rekap modifikasi memakai kolom prodi, angkatan, dan status yang tidak ada di tabel mahasiswa. Tabel mahasiswa hanya memiliki id_prodi sebagai foreign key yang merujuk ke tabel prodi.
-
-**Query yang Gagal:**
-```sql
-SELECT prodi, 
-       angkatan,
-       COUNT(*) AS jumlah, 
-       ROUND(AVG(ipk),2) AS rata_ipk,
-       MAX(ipk) AS ipk_tertinggi,
-       MIN(ipk) AS ipk_terendah,
-       SUM(CASE WHEN status = 'Aktif' THEN 1 ELSE 0 END) AS jml_aktif
-FROM mahasiswa 
-GROUP BY prodi, angkatan;
-```
-
-**Query Perbaikan:**
-```sql
-SELECT p.nama_prodi AS prodi,
-       COUNT(*) AS jumlah,
-       ROUND(AVG(m.ipk),2) AS rata_ipk,
-       MAX(m.ipk) AS ipk_tertinggi,
-       MIN(m.ipk) AS ipk_terendah
-FROM mahasiswa m
-JOIN prodi p ON m.id_prodi = p.id_prodi
-GROUP BY p.nama_prodi
-ORDER BY jumlah DESC;
-```
-
+Error Database Connection Refused - sering lupa mengaktifkan Apache dan MySQL
+*   **Error:** `Warning: mysqli_connect(): (HY000/2002): No connection could be made because the target machine actively refused it`
+*   **Penyebab:** Modul MySQL pada XAMPP Control Panel belum dinyalakan, sehingga server database tidak berjalan di port 3306.
+*   **Langkah Perbaikan:** Membuka aplikasi XAMPP Control Panel dan mengklik tombol **Start** pada modul **MySQL** dan **Apache**. Koneksi berhasil kembali setelah server menyala.
